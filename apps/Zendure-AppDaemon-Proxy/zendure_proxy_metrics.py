@@ -685,10 +685,10 @@ def render_metrics_dashboard(title: str, snapshot: dict[str, Any], refresh_s: in
     header {{ padding: 16px 20px; border-bottom: 1px solid #374151; background: #0f172a; }}
     h1 {{ margin: 0; font-size: 18px; }}
     .meta {{ margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px 16px; color: #cbd5e1; font-size: 13px; }}
-    main {{ padding: 16px 20px; display: grid; gap: 16px; }}
-    section {{ border: 1px solid #374151; border-radius: 8px; background: #020617; }}
+    main {{ padding: 16px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }}
+    section {{ min-width: 0; border: 1px solid #374151; border-radius: 8px; background: #020617; }}
     h2 {{ margin: 0; padding: 12px 14px; font-size: 15px; background: #1f2937; }}
-    .table-wrap {{ overflow-x: auto; }}
+    .table-wrap {{ max-width: 100%; overflow-x: auto; }}
     table {{ width: 100%; border-collapse: collapse; font-size: 13px; }}
     th, td {{ padding: 9px 12px; border-top: 1px solid #1f2937; text-align: right; }}
     th:first-child, td:first-child {{ text-align: left; }}

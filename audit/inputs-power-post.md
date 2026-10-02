@@ -80,11 +80,13 @@ silently introduce a different degraded-power accounting policy.
 
 ## Verification
 
-The following new file adds fourteen safety/runtime cases:
+The following new file adds twenty safety/runtime cases:
 `tests/test_independent_power_safety.py`. Cases cover low discharge SoC values
 `0`, `8`, and `10` across ordinary, equal, and forced distribution; POST
 transition integration; runtime disabling of configured equal mode; and fully
-SoC-blocked charge/discharge pools.
+SoC-blocked charge/discharge pools. Six additional cases verify discharge-only
+damper operation, the configured percentage of the active-device cap, already
+active multi-device requests, reserve capacity fallback, timer expiry, and runtime disabling of a configured damper.
 
 Executed successfully:
 
@@ -92,6 +94,32 @@ Executed successfully:
 python3 -m pytest -q tests/test_independent_power_safety.py tests/test_node_red_power_distribution_compat.py tests/test_node_red_post_power_compat.py tests/test_node_red_repeat_standby_serial_simulated.py tests/test_appdaemon_proxy_release_gate.py
 ```
 
-Result: **188 passed**. The command verifies local synthetic and mocked runtime
+Result: **194 passed**. The command verifies local synthetic and mocked runtime
 behavior. Live Zendure devices, Home Assistant deployment, and publication were
 outside the implementation worker's scope.
+
+## Parent review: discharge damper conditions
+
+The parent supplied an additional functional specification without predecessor
+source expressions. The discharge damper applies when at least two devices can
+accept discharge, the previous active count is one, the previous aggregate
+command is nonzero, SoC boundary handling and forced distribution are inactive,
+and reserve mode activation is inactive. The upper value is
+`effective_discharge_max_watts * single_mode_upper_pct / 100` for the current
+single device, with the first eligible device as a fallback. A surplus within
+`damper_amount` retains the upper value until `damper_timer` expires.
+
+`execute_post()` now determines reserve activation before calling
+`_allocation()` and passes the activation flag explicitly. `_allocation()`
+applies the damper under the specified conditions and resets stale damper
+metadata when the conditions are absent. Charging requests and requests with
+multiple previously active devices keep their calculated distribution.
+
+The same recorded verification command passed with **194 tests** after the
+six additional damper tests. Python compilation of both owned modules also
+passed. No live device writes or publication were performed.
+
+An explicit `dualModeDamper=0` write overrides configured `damper_enable=True`
+until restart, using the same runtime-override policy as `equalMode`. A focused
+regression verifies that the subsequent 900 W discharge request uses both
+devices at 450 W rather than retaining an 800 W damper hold.

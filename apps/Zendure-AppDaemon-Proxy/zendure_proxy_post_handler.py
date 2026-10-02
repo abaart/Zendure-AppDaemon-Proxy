@@ -55,11 +55,12 @@ def _clear_transition_timers(state):
         setattr(state, key, 0.0)
 
 
-def _allocation(state, cfg, mode, power, eligible, previous_ts):
+def _allocation(state, cfg, mode, power, eligible, previous_ts, *, reserve_active=False):
     size = len(state.devices)
     previous_active = list(state.devices_active_idx)
     previous_single = state.single_mode_active_device
     previous_mode = state.ac_mode
+    previous_active_count = state.device_active_count
     result = [0] * size
     indices = [i for i in eligible if _direction_allowed(state, i, mode)]
     caps = [_direction_cap(state.devices[i], mode) for i in range(size)]
@@ -157,12 +158,29 @@ def _allocation(state, cfg, mode, power, eligible, previous_ts):
                 extra = min(deficit, caps[idx] - result[idx])
                 result[idx] += extra
                 deficit -= extra
-    if (cfg.damper_enable or state.dualmode_damper_enabled) and not boundary and not force_all:
-        idx = state.single_mode_active_device
-        if idx in indices:
-            result = apply_damper(result, state, power, caps[idx], now(), cfg.damper_amount, cfg.damper_timer)
-            if state.dualmode_damper_active:
-                active = [idx]
+    damper_enabled = state.dualmode_damper_enabled
+    if 'dualmode_damper_enabled' not in getattr(state, '_runtime_mode_overrides', set()):
+        damper_enabled = damper_enabled or cfg.damper_enable
+    damper_allowed = (
+        damper_enabled
+        and mode == 2
+        and len(indices) >= 2
+        and state.latest_power_cmd != 0
+        and previous_active_count == 1
+        and not boundary
+        and not force_all
+        and not reserve_active
+    )
+    if damper_allowed:
+        idx = previous_single if previous_single in indices else indices[0]
+        state.single_mode_active_device = idx
+        upper = caps[idx] * cfg.single_mode_upper_pct / 100
+        result = apply_damper(result, state, power, upper, now(), cfg.damper_amount, cfg.damper_timer)
+        if state.dualmode_damper_active:
+            active = [idx]
+    else:
+        state.dualmode_damper_active = False
+        state.dualmode_damper_start_ts = 0.0
     if boundary or force_all or power <= 0:
         _clear_transition_timers(state)
     else:
@@ -280,11 +298,11 @@ async def execute_post(payload, clients, state, cfg, logger, *, is_repeat=False)
     if has_power:
         power = max(0, _int(props.get('inputLimit' if mode == 1 else 'outputLimit', 0))) if not invalid else 0
         signed_total = power if mode == 1 else -power
-        if not invalid:
-            per_device, boundary = _allocation(state, cfg, mode, power, eligible, previous_ts)
         record_power_direction(state, cfg, signed_total, is_repeat, timestamp)
         force_all = _runtime_flag(state, cfg, 'equal_mode') or _runtime_flag(state, cfg, 'always_dual_mode')
         anti_active = cfg.anti_pingpong_enable and not invalid and not force_all and (state.anti_pingpong_active if activation_mode(cfg) == 'smart' else threshold_active(state, cfg, signed_total, timestamp))
+        if not invalid:
+            per_device, boundary = _allocation(state, cfg, mode, power, eligible, previous_ts, reserve_active=anti_active)
         if anti_active:
             split = select_anti_pingpong_split(state, cfg, mode, eligible, power, state.max_power_in if mode == 1 else state.max_power_out)
             state.anti_pingpong_last_reason = split.reason

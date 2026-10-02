@@ -161,6 +161,8 @@ async def exercise(awaitable):
     try:
         await proxy.initialize()
         initialized = True
+        await asyncio.wait_for(proxy._bootstrap_task, timeout=2)
+        assert proxy._state.devices[0].sn == "MOCK-SN"
         url = listener_url(proxy._runner)
         assert len(boundary.endpoints) == 3 and len(boundary.routes) == 3
         assert len(boundary.timers) == 4

@@ -119,7 +119,8 @@ class ZendureProxy(hass.Hass):
                 dev.configured_discharge_max_watts = limit.discharge_max_watts
             devices.append(dev)
         self._state = ProxyState(device_count=len(devices), devices=devices, startup_ts=now(),
-                                 equal_mode=self._cfg.equal_mode, always_dual_mode=self._cfg.always_dual_mode)
+                                 equal_mode=self._cfg.equal_mode, always_dual_mode=self._cfg.always_dual_mode,
+                                 dualmode_damper_enabled=self._cfg.damper_enable)
         self._metrics = MetricsRegistry(len(devices))
         self._queue = RequestQueue()
         self._upstream_lock = asyncio.Lock()
@@ -131,7 +132,8 @@ class ZendureProxy(hass.Hass):
         self._file_logger = self._create_file_logger()
         self._mqtt_api = await self._resolve_appdaemon_result(self._get_mqtt_api())
         self._ensure_publication_state()
-        await self._restore_metrics_counters_from_ha()
+        if self._cfg.metrics_enabled:
+            await self._restore_metrics_counters_from_ha()
         self._endpoint_handles = []
         for name, callback in (("zendure_proxy_report", self._api_report), ("zendure_proxy_write", self._api_write), ("zendure_proxy", self._api_gielz_compat)):
             handle = await self._resolve_appdaemon_result(self.register_endpoint(callback, name))
@@ -139,15 +141,16 @@ class ZendureProxy(hass.Hass):
         self._report_endpoint_handle, self._write_endpoint_handle = self._endpoint_handles[:2]
         self._route_handles = []
         for enabled, callback, route in ((self._cfg.log_dashboard_enabled, self._logs_dashboard, self._cfg.log_dashboard_route),
-            (self._cfg.metrics_dashboard_enabled, self._metrics_dashboard, self._cfg.metrics_dashboard_route),
+            (self._cfg.metrics_enabled and self._cfg.metrics_dashboard_enabled, self._metrics_dashboard, self._cfg.metrics_dashboard_route),
             (self._cfg.diagnostics_dashboard_enabled, self._diagnostics_dashboard, self._cfg.diagnostics_dashboard_route)):
             if enabled:
                 self._route_handles.append(await self._resolve_appdaemon_result(self.register_route(callback, route)))
         await self._start_server()
         self._processor_task = asyncio.create_task(self._processor())
+        self._bootstrap_task = asyncio.create_task(self._init_serial_numbers())
         self._timer_handles = []
         callbacks = [(self._standby_check, 10), (self._publish_sensor_heartbeats, 60)]
-        if self._cfg.metrics_ha_sensors_enabled:
+        if self._cfg.metrics_enabled and self._cfg.metrics_ha_sensors_enabled:
             callbacks.append((self._publish_metrics_sensors, max(1, min(self._cfg.metrics_ha_sensors_interval, 10))))
         if self._cfg.proxy_ha_sensors_enabled:
             callbacks.append((self._refresh_proxy_ha_sensors, 300))
@@ -164,6 +167,11 @@ class ZendureProxy(hass.Hass):
             self._proxy_log(warning, level="WARNING")
 
     async def terminate(self):
+        bootstrap = getattr(self, "_bootstrap_task", None)
+        if bootstrap:
+            bootstrap.cancel()
+            with contextlib.suppress(asyncio.CancelledError, Exception):
+                await bootstrap
         task = getattr(self, "_processor_task", None)
         if task:
             task.cancel()
@@ -358,12 +366,14 @@ class ZendureProxy(hass.Hass):
         self._mqtt_connected = True
 
     async def _publish_metrics_sensors(self, _kwargs=None):
-        if getattr(self._cfg, "metrics_ha_sensors_enabled", True):
+        if getattr(self._cfg, "metrics_enabled", True) and getattr(self._cfg, "metrics_ha_sensors_enabled", True):
             self._ensure_publication_state()
             async with self._sensor_publication_lock:
                 await self._publish_metrics_sensor_values()
 
     async def _publish_metrics_sensor_values(self, *, heartbeat_lead_seconds=0):
+        if not getattr(self._cfg, "metrics_enabled", True) or not getattr(self._cfg, "metrics_ha_sensors_enabled", True):
+            return
         for entity_id, (value, attrs) in self._metrics.flat_ha_sensors().items():
             state = self._ha_sensor_state(value)
             ts = now()
@@ -375,6 +385,8 @@ class ZendureProxy(hass.Hass):
                     self._proxy_log(f"Metrics sensor publish failed: entity_id={entity_id} error={exc}", level="WARNING")
 
     async def _restore_metrics_counters_from_ha(self):
+        if not getattr(self._cfg, "metrics_enabled", True):
+            return
         states = {}
         for entity_id in self._metrics.counter_sensor_entity_ids():
             states[entity_id] = await self._resolve_appdaemon_result(self.get_state(entity_id))
@@ -384,7 +396,7 @@ class ZendureProxy(hass.Hass):
         response = getattr(self._state, "last_get_response", None)
         if response:
             await self._publish_proxy_ha_sensors(response, heartbeat_lead_seconds=60)
-        if getattr(self._cfg, "metrics_ha_sensors_enabled", True):
+        if getattr(self._cfg, "metrics_enabled", True) and getattr(self._cfg, "metrics_ha_sensors_enabled", True):
             self._ensure_publication_state()
             async with self._sensor_publication_lock:
                 await self._publish_metrics_sensor_values(heartbeat_lead_seconds=60)
@@ -617,7 +629,10 @@ class ZendureProxy(hass.Hass):
                         waiter.set_result(response)
 
     async def _init_serial_numbers(self):
-        await self._ensure_serial_numbers()
+        try:
+            await self._ensure_serial_numbers()
+        except Exception as exc:
+            self._proxy_log(f"Serial number bootstrap failed: {exc}", level="WARNING")
 
     async def _ensure_serial_numbers(self):
         self._ensure_upstream_lock()

@@ -24,3 +24,9 @@ These checks exercise synthetic boundaries. The tests do not establish successfu
 ## Unspecified public details
 
 The synthetic input contract does not specify every malformed-write response string, the HTML design of diagnostics, or serial-bootstrap error wording. The replacement runtime uses explicit JSON errors with HTTP 400 for invalid input, 503 for missing configured devices or serial numbers, 504 for an expired GET cache or POST timeout, and 502 for an unexpected processor failure. The documented report/write URLs, API endpoint names and compatibility sensor identifiers remain fixed.
+
+## Additional runtime settings and startup facts
+
+The coordinator supplied the functional requirements that `metrics_enabled: false` prevents metrics counter restoration, HA publication, metrics route registration and metrics timers; collection may still occur inside `MetricsRegistry`. Initialization starts `_init_serial_numbers()` in a separately tracked background task after the processor starts, and termination cancels and awaits the bootstrap task. Initial `dualmode_damper_enabled` comes from `Config.damper_enable`.
+
+The implementer inspected the installed AppDaemon 4.5.13 `ADAPI.config_dir` property, which returns `self.AD.config_dir` as a `Path`. With a synthetic `AD` object and patched file-logger constructor, the real imported `Hass` subclass selected `<config_dir>/logs/zendure_proxy.log`. The check created no log file and did not connect to Home Assistant. Added synthetic tests verify the same directory derivation, disabled metrics behavior, damper initialization and nonblocking bootstrap cancellation.

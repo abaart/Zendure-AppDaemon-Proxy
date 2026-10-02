@@ -88,7 +88,7 @@
     },
     {
       "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy.py",
-      "sha256": "7d77a7cee97fce987d322e8b1892b36b68c6239a0996bf6e08a2f5fb2814679d",
+      "sha256": "27817bddd663ad901540aff5ba08611c00999a626e6f8ea4d02ca52fc7be157c",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -134,7 +134,7 @@
     },
     {
       "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_get_handler.py",
-      "sha256": "2498f16135478df42638c5a08b89eaada57806ae5fe81272ec87834f37f9d56d",
+      "sha256": "0c9bc8fa269698a738c8fc5fa344118abfdd9913c2b0cb1bf0f56e06929cc28b",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -182,7 +182,7 @@
     },
     {
       "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_metrics.py",
-      "sha256": "6dbfe98ace1190fff23609dee2836417ca6cd26af0bb4265ef820bf77f41b5c8",
+      "sha256": "34004a3c242fc516bf8fd7d46270ee251038a1219c68f9421ed06ba3eee5bab6",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [
@@ -208,7 +208,7 @@
     },
     {
       "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_post_handler.py",
-      "sha256": "8a1ac8ae931253119611558c0ca415fac67243a532958badda97d496ec6e5204",
+      "sha256": "5e4e08955a14ae40cbb895a27f869353bca605d4eae81a42fef3573386d045da",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -332,7 +332,7 @@
     },
     {
       "path": "audit/inputs-power-post.md",
-      "sha256": "27df9bd2fc774a1a8e74585f0e62f7e788812ef1bcecd29088e627cdbe8ae4c7",
+      "sha256": "99553e1e58ffa9ef5f117c6e8e67f48ab7b4fe82a663b1e53889434ecaebd5af",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -343,7 +343,7 @@
     },
     {
       "path": "audit/inputs-runtime.md",
-      "sha256": "3fcb38bebe721a359eec42e6ed4419be1236374a190835957e99264d4ed69989",
+      "sha256": "ca6b94b9e0e1e2e12989f0416f178a5fb9bd700b7616fc08c4da32e301ea36a1",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -398,7 +398,7 @@
     },
     {
       "path": "audit/review-http-runtime.md",
-      "sha256": "4855a76e2b3eaf5c32bd2058ec26b36421561cecc5d274a2d73413b9056e89ed",
+      "sha256": "771a5aa434cb20e7f59c38b5baf10d9e7d7d977446553abb4ab5e6e90881a4bf",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -582,7 +582,7 @@
     },
     {
       "path": "scripts/verify_http_runtime.py",
-      "sha256": "89c9cf49f5f9255f810e1d89ab3f35adf72119a3614c7973f434ce76c3f329f7",
+      "sha256": "e5dbc2e6ab2eee45efd97384ed9285fe5903a5f6a502ef39417370540660a373",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -645,7 +645,7 @@
     },
     {
       "path": "tests/test_independent_power_safety.py",
-      "sha256": "4040cd0a7e109cbd6bdda537541b7e5ffd895737b04c57edfca0e0dc5f66e299",
+      "sha256": "37f3af1ad4134bedd60438e19c98820a9b834393d537e8e016d3fa73418949a4",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -741,7 +741,7 @@
     },
     {
       "path": "tests/test_runtime_resilience.py",
-      "sha256": "28d610edec6624ca62d38d4caac92812f36189f864e729b6d98009b7e63f047f",
+      "sha256": "51b315f1d41efb8269b32c5e472edae1d2a86a365d5678be4f011ffb66afd0ce",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -786,6 +786,17 @@
       "relevant_overlaps": "Product and interface names retained as functional identifiers",
       "decision": "independent implementation",
       "rights_basis": "New owner-authorized documentation"
+    },
+    {
+      "path": "tests/test_get_runtime_mode_flags.py",
+      "sha256": "75595e5932b4184afaeedc1d5ff435d4fb449f9913e3fc24887b76d657f3b701",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New independently written POST-to-GET runtime-mode regression tests",
+      "relevant_overlaps": "Public mode fields and synthetic device interfaces",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized new synthetic regression tests"
     }
   ]
 }

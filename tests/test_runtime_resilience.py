@@ -3,6 +3,7 @@
 import asyncio
 from copy import deepcopy
 import types
+from pathlib import Path
 import unittest
 from unittest.mock import patch
 
@@ -192,3 +193,66 @@ class RuntimeResilienceTests(unittest.IsolatedAsyncioTestCase):
                 await app.initialize()
         self.assertEqual(set(closed), {"zendure_proxy_report", "zendure_proxy_write", "zendure_proxy", "http", "client"})
         self.assertEqual(await app._queue.depths(), (0, 0))
+
+    async def test_disabled_metrics_skip_registration_restoration_and_publication(self):
+        app = self.proxy()
+        routes, timers = [], []
+        app.args = {"ip_zendure_1": "ip1", "metrics_enabled": False, "damper_enable": True,
+            "log_file_enabled": False, "proxy_ha_sensors_enabled": False,
+            "proxy_ha_sensors_mqtt_discovery_enabled": False}
+        app.get_state = lambda *args, **kwargs: self.fail("Disabled metrics must not restore counters")
+        app.set_state = lambda *args, **kwargs: self.fail("Disabled metrics must not publish counters")
+        app.register_endpoint = lambda *args: "endpoint"
+        app.register_route = lambda callback, name: routes.append(name)
+        app.run_every = lambda callback, start, interval: timers.append(callback)
+        app._start_server = noop
+        app._init_serial_numbers = noop
+        app._create_file_logger = lambda: None
+        app.deregister_endpoint = lambda *args: None
+        client = types.SimpleNamespace(close=noop)
+        with patch("zendure_proxy.DeviceClient", return_value=client):
+            await app.initialize()
+        self.assertNotIn("zendure_proxy_metrics", routes)
+        self.assertNotIn(app._publish_metrics_sensors, timers)
+        self.assertTrue(app._state.dualmode_damper_enabled)
+        await app._restore_metrics_counters_from_ha()
+        await app._publish_metrics_sensors()
+        await app._publish_metrics_sensor_values()
+        await app._publish_sensor_heartbeats()
+        await app.terminate()
+
+    async def test_initial_serial_bootstrap_runs_without_blocking_start_and_is_cancelled(self):
+        app = self.proxy()
+        started = asyncio.Event()
+        completed = asyncio.Event()
+        app.args = {"ip_zendure_1": "ip1", "log_file_enabled": False,
+            "metrics_enabled": False, "proxy_ha_sensors_enabled": False,
+            "proxy_ha_sensors_mqtt_discovery_enabled": False}
+        async def blocked_bootstrap():
+            started.set()
+            try:
+                await asyncio.Event().wait()
+            finally:
+                completed.set()
+        app._init_serial_numbers = blocked_bootstrap
+        app._start_server = noop
+        app._create_file_logger = lambda: None
+        app.register_endpoint = lambda *args: "endpoint"
+        app.register_route = lambda *args: "route"
+        app.run_every = lambda *args: "timer"
+        app.deregister_endpoint = lambda *args: None
+        client = types.SimpleNamespace(close=noop)
+        with patch("zendure_proxy.DeviceClient", return_value=client):
+            await asyncio.wait_for(app.initialize(), 1)
+        await asyncio.wait_for(started.wait(), 1)
+        self.assertFalse(app._bootstrap_task.done())
+        await app.terminate()
+        self.assertTrue(completed.is_set())
+        self.assertTrue(app._bootstrap_task.cancelled())
+
+    def test_default_log_file_uses_appdaemon_config_directory(self):
+        app = self.proxy()
+        app.config_dir = Path("/private/tmp/zendure-runtime-logging-check")
+        with patch("zendure_proxy.ProxyFileLogger") as logger:
+            app._create_file_logger()
+        self.assertEqual(logger.call_args.args[0], "/private/tmp/zendure-runtime-logging-check/logs/zendure_proxy.log")

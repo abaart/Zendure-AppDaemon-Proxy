@@ -136,6 +136,13 @@ def _transition_recent(state, cfg):
         state.forced_dual_transition_start_ts))
 
 
+def _mode_enabled(state, cfg, state_name, config_name=None):
+    selected = bool(getattr(state, state_name, False))
+    if state_name in getattr(state, "_runtime_mode_overrides", ()):
+        return selected
+    return selected or bool(getattr(cfg, config_name or state_name, False))
+
+
 def _relay_saver_remaining_seconds(state, cfg, current_ts):
     return max(0, math.ceil(max((state.relay_saver_until_ts_by_idx.get(idx, current_ts) for idx in state.relay_saver_paused_idx), default=current_ts) - current_ts)) if cfg.relay_saver_enable else 0
 
@@ -169,7 +176,8 @@ def build_combined_response(results, state, cfg, *, reason="fresh"):
         elif key == "gridOffMode":
             props[key] = 0 if 0 in vals else 1 if 1 in vals else 2
         elif key == "smartMode":
-            temporary = _transition_recent(state, cfg) or any(dev.standby_device for dev in state.devices) or state.dualmode_damper_active or state.anti_pingpong_active
+            damper_active = state.dualmode_damper_active and _mode_enabled(state, cfg, "dualmode_damper_enabled", "damper_enable")
+            temporary = _transition_recent(state, cfg) or any(dev.standby_device for dev in state.devices) or damper_active or state.anti_pingpong_active
             props[key] = max(vals) if temporary else math.prod(vals)
         elif key == "socLimit":
             props[key] = vals[0] if len(set(vals)) == 1 else 0
@@ -201,8 +209,8 @@ def build_combined_response(results, state, cfg, *, reason="fresh"):
     latest = state.latest_power_cmd if state.latest_power_cmd or state.latest_power_message_ts else sum(commands)
     props.update({
         "proxyVersion": PROXY_VERSION,
-        "latestPowerCmd": latest, "dualModeDamper": int(cfg.damper_enable),
-        "equalMode": int(cfg.equal_mode), "alwaysDualMode": int(cfg.always_dual_mode),
+        "latestPowerCmd": latest, "dualModeDamper": int(_mode_enabled(state, cfg, "dualmode_damper_enabled", "damper_enable")),
+        "equalMode": int(_mode_enabled(state, cfg, "equal_mode")), "alwaysDualMode": int(_mode_enabled(state, cfg, "always_dual_mode")),
         "activeDevice": _active_device_mask(state, latest_power_cmd=latest, device_power_cmds=commands,
             soc_limit=props.get("socLimit", 0), output_pack_power=props.get("outputPackPower", 0), pack_input_power=props.get("packInputPower", 0)),
         "antiPingpong": int(cfg.anti_pingpong_enable),

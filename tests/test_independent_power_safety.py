@@ -72,3 +72,73 @@ def test_all_devices_at_direction_soc_limit_receive_zero(mode, power_key):
     assert state.device_active_count == 0
     assert state.devices_active_idx == []
     assert [client.post_payloads[0]['properties'][power_key] for client in clients] == [0, 0]
+
+
+def _damper_case(*, mode=2, previous_count=1, upper_pct=100, reserve=False):
+    state = ProxyState(device_count=2, ac_mode=mode, latest_power_cmd=600 if mode == 1 else -600,
+                       device_active_count=previous_count,
+                       devices_active_idx=[0] if previous_count == 1 else [0, 1],
+                       anti_pingpong_active=reserve,
+                       devices=[DeviceState(sn='A', electric_level=50), DeviceState(sn='B', electric_level=50)])
+    cfg = Config(device_ips=['a', 'b'], damper_enable=True,
+                 single_mode_upper_pct=upper_pct, anti_pingpong_enable=reserve,
+                 anti_pingpong_activation_mode='smart')
+    return state, cfg, [FakeDeviceClient(), FakeDeviceClient()]
+
+
+def test_damper_allows_charging_request_to_use_two_devices():
+    state, cfg, clients = _damper_case(mode=1)
+    asyncio.run(execute_post({'properties': {'acMode': 1, 'inputLimit': 900}}, clients, state, cfg, lambda *args, **kwargs: None))
+    assert state.dualmode_damper_active is False
+    assert state.device_active_count == 2
+    assert [client.post_payloads[0]['properties']['inputLimit'] for client in clients] == [450, 450]
+
+
+def test_discharge_damper_holds_configured_percentage_of_active_device_cap():
+    state, cfg, clients = _damper_case(upper_pct=80)
+    asyncio.run(execute_post({'properties': {'acMode': 2, 'outputLimit': 690}}, clients, state, cfg, lambda *args, **kwargs: None))
+    assert state.dualmode_damper_active is True
+    assert state.device_active_count == 1
+    assert [client.post_payloads[0]['properties']['outputLimit'] for client in clients] == [640, 0]
+
+
+def test_discharge_damper_keeps_already_active_two_device_distribution():
+    state, cfg, clients = _damper_case(previous_count=2)
+    asyncio.run(execute_post({'properties': {'acMode': 2, 'outputLimit': 900}}, clients, state, cfg, lambda *args, **kwargs: None))
+    assert state.dualmode_damper_active is False
+    assert state.device_active_count == 2
+    assert [client.post_payloads[0]['properties']['outputLimit'] for client in clients] == [450, 450]
+
+
+def test_discharge_damper_skips_active_reserve_policy_capacity_fallback():
+    state, cfg, clients = _damper_case(reserve=True)
+    asyncio.run(execute_post({'properties': {'acMode': 2, 'outputLimit': 900}}, clients, state, cfg, lambda *args, **kwargs: None))
+    assert state.anti_pingpong_last_reason == 'service_capacity'
+    assert state.dualmode_damper_active is False
+    assert state.device_active_count == 2
+    assert [client.post_payloads[0]['properties']['outputLimit'] for client in clients] == [450, 450]
+
+
+def test_discharge_damper_expires_and_allows_two_device_commands(monkeypatch):
+    import zendure_proxy_post_handler as post_handler
+
+    current_ts = [100.0]
+    monkeypatch.setattr(post_handler, 'now', lambda: current_ts[0])
+    state, cfg, clients = _damper_case(upper_pct=80)
+    cfg.damper_timer = 10
+    asyncio.run(execute_post({'properties': {'acMode': 2, 'outputLimit': 690}}, clients, state, cfg, lambda *args, **kwargs: None))
+    assert state.dualmode_damper_active is True
+    current_ts[0] = 111.0
+    asyncio.run(execute_post({'properties': {'acMode': 2, 'outputLimit': 690}}, clients, state, cfg, lambda *args, **kwargs: None))
+    assert state.dualmode_damper_active is False
+    assert state.device_active_count == 2
+    assert all(client.post_payloads[-1]['properties']['outputLimit'] > 0 for client in clients)
+
+
+def test_runtime_damper_toggle_can_disable_configured_damper():
+    state, cfg, clients = _damper_case()
+    asyncio.run(execute_post({'properties': {'dualModeDamper': 0}}, clients, state, cfg, lambda *args, **kwargs: None))
+    asyncio.run(execute_post({'properties': {'acMode': 2, 'outputLimit': 900}}, clients, state, cfg, lambda *args, **kwargs: None))
+    assert state.dualmode_damper_active is False
+    assert state.device_active_count == 2
+    assert [client.post_payloads[0]['properties']['outputLimit'] for client in clients] == [450, 450]
