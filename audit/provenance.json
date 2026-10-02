@@ -775,6 +775,17 @@
       "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
       "decision": "owner-authored retained",
       "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "docs/changelogs/2026-10-02-01-gpl-successor.md",
+      "sha256": "f258833adeebdb7018c5640b253d0c8c16cf089035d3b82bc4b289346f578735",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New user-facing successor release explanation",
+      "relevant_overlaps": "Product and interface names retained as functional identifiers",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized documentation"
     }
   ]
 }
