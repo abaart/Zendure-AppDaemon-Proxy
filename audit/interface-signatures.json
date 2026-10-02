@@ -1,0 +1,1102 @@
+{
+  "zendure_proxy_device_client.py": [
+    {
+      "name": "build_device_url",
+      "arguments": "ip: str, endpoint: str, local_proxy_url: str=''",
+      "async": false
+    },
+    {
+      "name": "_exception_message",
+      "arguments": "exc: Exception",
+      "async": false
+    },
+    {
+      "name": "__init__",
+      "arguments": "self, ip: str, logger: Callable, metrics=None, device_idx: int=0, request_timeout: float=60.0, separate_get_post_connections: bool=True, idle_connection_close_seconds: float=600.0",
+      "async": false
+    },
+    {
+      "name": "get",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "post",
+      "arguments": "self, payload: dict",
+      "async": true
+    },
+    {
+      "name": "set_local_proxy_url",
+      "arguments": "self, local_proxy_url: str",
+      "async": false
+    },
+    {
+      "name": "_enqueue",
+      "arguments": "self, method: str, payload: Optional[dict]",
+      "async": true
+    },
+    {
+      "name": "_worker",
+      "arguments": "self, queue: asyncio.Queue[DeviceRequest]",
+      "async": true
+    },
+    {
+      "name": "_execute_get",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_execute_post",
+      "arguments": "self, payload: dict",
+      "async": true
+    },
+    {
+      "name": "close_post_connection",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "close_get_connection",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "close_idle_connections",
+      "arguments": "self, current_ts: float | None=None",
+      "async": true
+    },
+    {
+      "name": "close",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_set_queue_depth",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_session_key",
+      "arguments": "self, method: str",
+      "async": false
+    },
+    {
+      "name": "_create_session",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_start_request",
+      "arguments": "self, method: str",
+      "async": true
+    },
+    {
+      "name": "_finish_request",
+      "arguments": "self, method: str",
+      "async": true
+    },
+    {
+      "name": "_close_session",
+      "arguments": "self, key: str, *, force: bool=False",
+      "async": true
+    },
+    {
+      "name": "_idle_session_cleanup",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_unique_queues",
+      "arguments": "self",
+      "async": false
+    }
+  ],
+  "zendure_proxy_state.py": [
+    {
+      "name": "_effective_cap",
+      "arguments": "reported_cap: int, configured_cap: Optional[int]",
+      "async": false
+    },
+    {
+      "name": "effective_charge_max_watts",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "effective_discharge_max_watts",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "__post_init__",
+      "arguments": "self",
+      "async": false
+    }
+  ],
+  "zendure_proxy_get_handler.py": [
+    {
+      "name": "execute_get",
+      "arguments": "clients: list[DeviceClient], state: ProxyState, cfg: Config, logger: Callable, metrics=None",
+      "async": true
+    },
+    {
+      "name": "_update_device_state",
+      "arguments": "idx: int, data: dict, state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "_record_relay_measurements",
+      "arguments": "results: list[Optional[dict]], metrics",
+      "async": false
+    },
+    {
+      "name": "_record_last_known_fallbacks",
+      "arguments": "results: list[Optional[dict]], state: ProxyState, metrics",
+      "async": false
+    },
+    {
+      "name": "_recalculate_aggregate_device_limits",
+      "arguments": "state: ProxyState, cfg: Config, *, current_ts: float",
+      "async": false
+    },
+    {
+      "name": "build_combined_response",
+      "arguments": "results: list[Optional[dict]], state: ProxyState, cfg: Config, *, reason: str='fresh'",
+      "async": false
+    },
+    {
+      "name": "_slot_response",
+      "arguments": "idx: int, results: list[Optional[dict]], state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "_active_device_mask",
+      "arguments": "state: ProxyState, *, latest_power_cmd: int, device_power_cmds: list[int], soc_limit: int, output_pack_power: int, pack_input_power: int",
+      "async": false
+    },
+    {
+      "name": "_idx_mask",
+      "arguments": "indices: list[int]",
+      "async": false
+    },
+    {
+      "name": "_transition_recent",
+      "arguments": "state: ProxyState, cfg: Config",
+      "async": false
+    },
+    {
+      "name": "_relay_saver_remaining_seconds",
+      "arguments": "state: ProxyState, cfg: Config, current_ts: float",
+      "async": false
+    },
+    {
+      "name": "_effective_relay_saver_min_power",
+      "arguments": "state: ProxyState, cfg: Config",
+      "async": false
+    },
+    {
+      "name": "_reported_power_cmd",
+      "arguments": "props: dict",
+      "async": false
+    },
+    {
+      "name": "_int",
+      "arguments": "value: Any, default: int=0",
+      "async": false
+    },
+    {
+      "name": "_prop",
+      "arguments": "i: int, key: str, default: Any=0",
+      "async": false
+    },
+    {
+      "name": "_sum",
+      "arguments": "key: str",
+      "async": false
+    },
+    {
+      "name": "_has_all",
+      "arguments": "key: str",
+      "async": false
+    },
+    {
+      "name": "_avg_int",
+      "arguments": "key: str, default: int=0",
+      "async": false
+    }
+  ],
+  "zendure_proxy_power.py": [
+    {
+      "name": "now",
+      "arguments": "",
+      "async": false
+    },
+    {
+      "name": "epoch",
+      "arguments": "",
+      "async": false
+    },
+    {
+      "name": "distribute_power",
+      "arguments": "total: int, avail: list[float], max_power: int | list[int], balancing_factor: int=5",
+      "async": false
+    },
+    {
+      "name": "split_equal_power",
+      "arguments": "total: int, max_power: int | list[int]",
+      "async": false
+    },
+    {
+      "name": "_cap_list",
+      "arguments": "max_power: int | list[int], n: int",
+      "async": false
+    },
+    {
+      "name": "_direction_cap",
+      "arguments": "dev, ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_device_has_direction_headroom",
+      "arguments": "state: ProxyState, idx: int, ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_rank_for_direction",
+      "arguments": "state: ProxyState, ac_mode: int, indices: list[int]",
+      "async": false
+    },
+    {
+      "name": "_int",
+      "arguments": "value, default: int=0",
+      "async": false
+    },
+    {
+      "name": "effective_min_soc_pct",
+      "arguments": "state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "soc_boundary_lockstep_active",
+      "arguments": "state: ProxyState, eligible_indices: list[int] | None=None",
+      "async": false
+    },
+    {
+      "name": "calc_active_count",
+      "arguments": "state: ProxyState, ac_mode: int, total_power: int, upper: float, lower: float, force_all: bool, device_change_diff: int=5, eligible_indices: list[int] | None=None, soc_boundary_min_device_power_watts: int=100, soc_boundary_active: bool=False, soc_boundary_measured_capacities: list[int] | None=None",
+      "async": false
+    },
+    {
+      "name": "apply_transition",
+      "arguments": "per_device: list[int], state: ProxyState, now_ts: float, timer: int",
+      "async": false
+    },
+    {
+      "name": "_apply_forced_dual_transition",
+      "arguments": "per_device: list[int], state: ProxyState, now_ts: float, timer: int",
+      "async": false
+    },
+    {
+      "name": "apply_damper",
+      "arguments": "per_device: list[int], state: ProxyState, total_power: int, upper: float, now_ts: float, damper_amount: int, damper_timer: int",
+      "async": false
+    }
+  ],
+  "zendure_proxy.py": [
+    {
+      "name": "_health_transition_states",
+      "arguments": "response: dict",
+      "async": false
+    },
+    {
+      "name": "_health_slots",
+      "arguments": "response: dict, key: str",
+      "async": false
+    },
+    {
+      "name": "_changed_health_slots",
+      "arguments": "previous_states: dict[int, str], current_states: dict[int, str]",
+      "async": false
+    },
+    {
+      "name": "_health_item_for_slot",
+      "arguments": "response: dict, slot: int",
+      "async": false
+    },
+    {
+      "name": "_health_transition_entity_ids",
+      "arguments": "slots: frozenset[int]",
+      "async": false
+    },
+    {
+      "name": "should_repeat_last_power",
+      "arguments": "state: ProxyState, cfg: Config, *, current_ts: float | None=None",
+      "async": false
+    },
+    {
+      "name": "_repeat_payload_has_explicit_zero_power",
+      "arguments": "props: dict",
+      "async": false
+    },
+    {
+      "name": "_repeat_payload_power_cmd",
+      "arguments": "props: dict, current_ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_int",
+      "arguments": "value, default: int=0",
+      "async": false
+    },
+    {
+      "name": "initialize",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "terminate",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_create_file_logger",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_proxy_log",
+      "arguments": "self, message: str, level: str='INFO', **kwargs",
+      "async": false
+    },
+    {
+      "name": "_debug_capture_payload",
+      "arguments": "self, message_type: str, direction: str, payload: dict",
+      "async": false
+    },
+    {
+      "name": "_get_mqtt_api",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_resolve_anti_pingpong_grid_power_entity",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_ha_entity_exists",
+      "arguments": "self, entity_id: str",
+      "async": true
+    },
+    {
+      "name": "_valid_ha_entity_id",
+      "arguments": "value: str",
+      "async": false
+    },
+    {
+      "name": "_anti_pingpong_sample_grid_power",
+      "arguments": "self, _kwargs=None",
+      "async": true
+    },
+    {
+      "name": "_anti_pingpong_evaluate_smart",
+      "arguments": "self, _kwargs=None",
+      "async": true
+    },
+    {
+      "name": "_logs_dashboard",
+      "arguments": "self, request: aiohttp.web.Request, _kwargs",
+      "async": true
+    },
+    {
+      "name": "_metrics_dashboard",
+      "arguments": "self, _request: aiohttp.web.Request, _kwargs",
+      "async": true
+    },
+    {
+      "name": "_diagnostics_dashboard",
+      "arguments": "self, request: aiohttp.web.Request, _kwargs",
+      "async": true
+    },
+    {
+      "name": "_render_diagnostics_dashboard",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_diagnostics_snapshot",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_diagnostics_warnings",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_log_diagnostics_warnings",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_reset_node_red_counters",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_publish_metrics_sensors",
+      "arguments": "self, _kwargs=None",
+      "async": true
+    },
+    {
+      "name": "_publish_metrics_sensor_values",
+      "arguments": "self, *, heartbeat_lead_seconds=0",
+      "async": true
+    },
+    {
+      "name": "_publish_report_sensors",
+      "arguments": "self, response: dict, *, force_health_sensor_refresh: bool=False",
+      "async": true
+    },
+    {
+      "name": "_refresh_proxy_ha_sensors",
+      "arguments": "self, _kwargs=None",
+      "async": true
+    },
+    {
+      "name": "_publish_sensor_heartbeats",
+      "arguments": "self, _kwargs=None",
+      "async": true
+    },
+    {
+      "name": "_publish_proxy_ha_sensors",
+      "arguments": "self, response: dict, *, entity_ids: set[str] | None=None, force_existing_entities: bool=False, heartbeat_lead_seconds: int=0",
+      "async": true
+    },
+    {
+      "name": "_ensure_publication_state",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_publish_proxy_sensor_values",
+      "arguments": "self, response: dict, *, entity_ids: set[str] | None, force_existing_entities: bool, heartbeat_lead_seconds: int",
+      "async": true
+    },
+    {
+      "name": "_publish_health_transition_sensors",
+      "arguments": "self, response: dict, *, force_all: bool=False",
+      "async": true
+    },
+    {
+      "name": "_log_health_transitions",
+      "arguments": "self, response: dict, changed_slots: frozenset[int], current_states: dict[int, str], previous_states: dict[int, str] | None",
+      "async": false
+    },
+    {
+      "name": "_publish_proxy_mqtt_sensor",
+      "arguments": "self, entity_id: str, state, attributes: dict[str, Any], response: dict, updated_at: str",
+      "async": true
+    },
+    {
+      "name": "_mqtt_connection_changed",
+      "arguments": "self, _event, _data, _kwargs",
+      "async": true
+    },
+    {
+      "name": "_mqtt_ready",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_get_entity_state",
+      "arguments": "self, entity_id: str",
+      "async": true
+    },
+    {
+      "name": "_entity_is_proxy_managed",
+      "arguments": "self, entity_id: str, state: dict | None",
+      "async": false
+    },
+    {
+      "name": "_ha_attribute_is_true",
+      "arguments": "marker",
+      "async": false
+    },
+    {
+      "name": "_ha_sensor_state",
+      "arguments": "value",
+      "async": false
+    },
+    {
+      "name": "_resolve_appdaemon_result",
+      "arguments": "value",
+      "async": true
+    },
+    {
+      "name": "_restore_metrics_counters_from_ha",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_start_server",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_handle_get",
+      "arguments": "self, request: aiohttp.web.Request",
+      "async": true
+    },
+    {
+      "name": "_handle_post",
+      "arguments": "self, request: aiohttp.web.Request",
+      "async": true
+    },
+    {
+      "name": "_api_report",
+      "arguments": "self, _args, _kwargs",
+      "async": true
+    },
+    {
+      "name": "_api_write",
+      "arguments": "self, json_obj, _kwargs",
+      "async": true
+    },
+    {
+      "name": "_api_gielz_compat",
+      "arguments": "self, json_obj, kwargs",
+      "async": true
+    },
+    {
+      "name": "_gielz_compat_path",
+      "arguments": "json_obj, request: Any",
+      "async": false
+    },
+    {
+      "name": "_remember_local_proxy_url",
+      "arguments": "self, request: aiohttp.web.Request",
+      "async": false
+    },
+    {
+      "name": "_execute_report_request",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_execute_write_request",
+      "arguments": "self, payload: dict",
+      "async": true
+    },
+    {
+      "name": "_record_incoming_depths",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_mark_passive_zero_timestamps",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "_standby_check",
+      "arguments": "self, _kwargs=None",
+      "async": true
+    },
+    {
+      "name": "_processor",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_init_serial_numbers",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "_ensure_serial_numbers",
+      "arguments": "self",
+      "async": true
+    }
+  ],
+  "zendure_proxy_post_handler.py": [
+    {
+      "name": "execute_post",
+      "arguments": "payload: dict, clients: list[DeviceClient], state: ProxyState, cfg: Config, logger: Callable, *, is_repeat: bool=False",
+      "async": true
+    },
+    {
+      "name": "_soc_boundary_min_device_power",
+      "arguments": "cfg: Config",
+      "async": false
+    },
+    {
+      "name": "_soc_boundary_low_soc_active",
+      "arguments": "state: ProxyState, eligible: list[int]",
+      "async": false
+    },
+    {
+      "name": "_soc_boundary_command_indices",
+      "arguments": "state: ProxyState, ac_mode: int, eligible: list[int], total_power: int, max_power: int, previous_power_cmd_ts: float, low_soc_diff_threshold: int",
+      "async": false
+    },
+    {
+      "name": "_measured_power_capacities",
+      "arguments": "state: ProxyState, ac_mode: int, indices: list[int], fallback_max_power: int, previous_power_cmd_ts: float",
+      "async": false
+    },
+    {
+      "name": "_measured_power_capacity",
+      "arguments": "state: ProxyState, ac_mode: int, idx: int, fallback_max_power: int, previous_power_cmd_ts: float",
+      "async": false
+    },
+    {
+      "name": "_device_command_capacity",
+      "arguments": "state: ProxyState, ac_mode: int, idx: int, fallback_max_power: int",
+      "async": false
+    },
+    {
+      "name": "_transition_active",
+      "arguments": "state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "_transition_original_device",
+      "arguments": "state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "_clear_transition_timers",
+      "arguments": "state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "_transition_first_phase_fits_device_capacity",
+      "arguments": "state: ProxyState, ac_mode: int, total_power: int, fallback_max_power: int, original_idx: int",
+      "async": false
+    },
+    {
+      "name": "_enforce_device_command_capacities",
+      "arguments": "per_device: list[int], state: ProxyState, ac_mode: int, fallback_max_power: int",
+      "async": false
+    },
+    {
+      "name": "_same_direction_power_command",
+      "arguments": "power: int, ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_measured_device_power",
+      "arguments": "state: ProxyState, ac_mode: int, idx: int",
+      "async": false
+    },
+    {
+      "name": "_power_ac_mode",
+      "arguments": "props: dict, current_ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_record_device_power_command",
+      "arguments": "dev, signed_power: int, now_ts: float",
+      "async": false
+    },
+    {
+      "name": "_first_runtime_mode_key",
+      "arguments": "props: dict",
+      "async": false
+    },
+    {
+      "name": "_apply_runtime_mode_prop",
+      "arguments": "key: str, value, state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "_apply_aggregate_limit_props",
+      "arguments": "props: dict, state: ProxyState, devs: list, eligible: list[int]",
+      "async": false
+    },
+    {
+      "name": "_power_payload_for_device",
+      "arguments": "props: dict, ac_mode: int, pwr: int, invalid_direction: bool, *, include_ac_mode: bool=False",
+      "async": false
+    },
+    {
+      "name": "_apply_single_mode_damper",
+      "arguments": "power: int, state: ProxyState, upper: float, now_ts: float, cfg: Config",
+      "async": false
+    },
+    {
+      "name": "_single_mode_damper_upper",
+      "arguments": "state: ProxyState, ac_mode: int, eligible: list[int], direction_caps: list[int], cfg: Config, *, fallback_upper: float",
+      "async": false
+    },
+    {
+      "name": "_signed_power_cmd",
+      "arguments": "ac_mode: int, power: int",
+      "async": false
+    },
+    {
+      "name": "_anti_pingpong_activation_active",
+      "arguments": "state: ProxyState, cfg: Config, latest_power_cmd: int, invalid_direction: bool, force_all: bool, now_ts: float",
+      "async": false
+    },
+    {
+      "name": "_anti_pingpong_payloads",
+      "arguments": "state: ProxyState, cfg: Config, ac_mode: int, per_device: list[int], reserve_power_by_idx: dict[int, int], now_ts: float",
+      "async": false
+    },
+    {
+      "name": "_dominant_mode_delay_payloads",
+      "arguments": "state: ProxyState, cfg: Config, ac_mode: int, per_device: list[int], invalid_direction: bool, force_all: bool, now_ts: float",
+      "async": false
+    },
+    {
+      "name": "_full_power_payload",
+      "arguments": "ac_mode: int, power: int",
+      "async": false
+    },
+    {
+      "name": "_delay_payload_for_device",
+      "arguments": "ac_mode: int, soc_limit: int, power: int",
+      "async": false
+    },
+    {
+      "name": "_payload_signed_power",
+      "arguments": "payload: dict",
+      "async": false
+    },
+    {
+      "name": "_payload_signed_power_with_default",
+      "arguments": "payload: dict, default_ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_suppress_low_soc_charge_priority",
+      "arguments": "state: ProxyState, cfg: Config, eligible: list[int], idx: int, payload: dict",
+      "async": false
+    },
+    {
+      "name": "_low_soc_charge_priority_indices",
+      "arguments": "state: ProxyState, eligible: list[int], low_soc_diff_threshold: int",
+      "async": false
+    },
+    {
+      "name": "_desired_signed_power_by_device",
+      "arguments": "ac_mode: int, per_device: list[int], anti_payloads: dict[int, dict] | None, anti_signed_power: list[int]",
+      "async": false
+    },
+    {
+      "name": "_relay_saver_payloads",
+      "arguments": "state: ProxyState, cfg: Config, desired_signed_power: list[int], anti_payloads: dict[int, dict] | None, invalid_direction: bool, now_ts: float",
+      "async": false
+    },
+    {
+      "name": "_relay_saver_payload_for_sign",
+      "arguments": "sign: int, soc_limit: int, power: int",
+      "async": false
+    },
+    {
+      "name": "_clear_relay_saver_state",
+      "arguments": "state: ProxyState",
+      "async": false
+    },
+    {
+      "name": "_clear_relay_saver_device",
+      "arguments": "state: ProxyState, idx: int",
+      "async": false
+    },
+    {
+      "name": "_power_sign",
+      "arguments": "power: int",
+      "async": false
+    },
+    {
+      "name": "_cap_for_power_sign",
+      "arguments": "dev, sign: int",
+      "async": false
+    },
+    {
+      "name": "_record_ac_mode_command",
+      "arguments": "dev, payload: dict, now_ts: float",
+      "async": false
+    },
+    {
+      "name": "_suppress_standby_post",
+      "arguments": "dev, props: dict",
+      "async": false
+    },
+    {
+      "name": "_select_active_devices",
+      "arguments": "state: ProxyState, ac_mode: int, cfg: Config, *, previous_active_count: int | None=None, eligible_indices: list[int] | None=None, soc_diff_threshold: int | None=None",
+      "async": false
+    },
+    {
+      "name": "_previous_same_direction_power",
+      "arguments": "dev, ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_calc_per_device_power",
+      "arguments": "state: ProxyState, ac_mode: int, total_power: int, direction_caps: list[int], cfg: Config, *, soc_boundary_active: bool=False, previous_power_cmd_ts: float=0.0, soc_boundary_shortfall_compensation: bool=True",
+      "async": false
+    },
+    {
+      "name": "_distribute_soc_boundary_power",
+      "arguments": "state: ProxyState, ac_mode: int, total_power: int, max_power: int, cfg: Config, active_idx: list[int], previous_power_cmd_ts: float, shortfall_compensation: bool",
+      "async": false
+    },
+    {
+      "name": "_apply_measured_shortfall_compensation",
+      "arguments": "state: ProxyState, ac_mode: int, command_power: list[int], command_capacities: list[int], active_idx: list[int], previous_power_cmd_ts: float",
+      "async": false
+    },
+    {
+      "name": "_fresh_measured_under_delivery",
+      "arguments": "state: ProxyState, ac_mode: int, idx: int, previous_power_cmd_ts: float",
+      "async": false
+    },
+    {
+      "name": "_soc_boundary_weights",
+      "arguments": "state: ProxyState, ac_mode: int, active_idx: list[int]",
+      "async": false
+    },
+    {
+      "name": "_weighted_capped_int_distribution",
+      "arguments": "total_power: int, weights: list[float], capacities: list[int]",
+      "async": false
+    },
+    {
+      "name": "_direction_caps",
+      "arguments": "state: ProxyState, ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_split_aggregate_limit",
+      "arguments": "command: int, caps: list[int]",
+      "async": false
+    },
+    {
+      "name": "_limit_split_cap",
+      "arguments": "dev, direction: str",
+      "async": false
+    },
+    {
+      "name": "_device_can_accept_direction_power",
+      "arguments": "state: ProxyState, idx: int, ac_mode: int",
+      "async": false
+    },
+    {
+      "name": "_int",
+      "arguments": "value, default: int=0",
+      "async": false
+    }
+  ],
+  "zendure_proxy_config.py": [
+    {
+      "name": "_bool",
+      "arguments": "value",
+      "async": false
+    },
+    {
+      "name": "is_placeholder_device_ip",
+      "arguments": "value: str",
+      "async": false
+    },
+    {
+      "name": "load_config",
+      "arguments": "args: dict",
+      "async": false
+    },
+    {
+      "name": "_load_device_slots",
+      "arguments": "args: dict",
+      "async": false
+    },
+    {
+      "name": "_cap_from_args",
+      "arguments": "args: dict, key: str, warnings: list[str]",
+      "async": false
+    },
+    {
+      "name": "_cap_from_mapping",
+      "arguments": "item: dict, key: str, label: str, warnings: list[str]",
+      "async": false
+    },
+    {
+      "name": "_parse_positive_int",
+      "arguments": "value, label: str, warnings: list[str]",
+      "async": false
+    }
+  ],
+  "zendure_proxy_standby.py": [
+    {
+      "name": "manage_standby",
+      "arguments": "state: ProxyState, clients: list[DeviceClient], ac_mode: int, per_device: list[int], cfg: Config, logger: Callable",
+      "async": true
+    },
+    {
+      "name": "_delayed_standby",
+      "arguments": "idx: int, state: ProxyState, clients: list[DeviceClient], delay: float, logger: Callable, *, cfg: Config | None=None",
+      "async": true
+    },
+    {
+      "name": "_standby_allowed",
+      "arguments": "idx: int, state: ProxyState, cfg: Config",
+      "async": false
+    },
+    {
+      "name": "_standby_delay",
+      "arguments": "zero_ts: float, standby_timer: int",
+      "async": false
+    }
+  ],
+  "zendure_proxy_ha_sensors.py": [
+    {
+      "name": "build_proxy_ha_sensors",
+      "arguments": "response: dict, battery_order_raw: Any=None",
+      "async": false
+    },
+    {
+      "name": "_directed_power",
+      "arguments": "grid_input: Any, home_output: Any",
+      "async": false
+    },
+    {
+      "name": "_power_mode",
+      "arguments": "power: Any",
+      "async": false
+    },
+    {
+      "name": "_power_mode_icon",
+      "arguments": "state: str",
+      "async": false
+    },
+    {
+      "name": "_storage_mode",
+      "arguments": "value: Any",
+      "async": false
+    },
+    {
+      "name": "_deep_standby_state",
+      "arguments": "value: Any",
+      "async": false
+    },
+    {
+      "name": "_deep_standby_icon",
+      "arguments": "state: str",
+      "async": false
+    },
+    {
+      "name": "_relay_state",
+      "arguments": "value: Any",
+      "async": false
+    },
+    {
+      "name": "_zendure_temp",
+      "arguments": "raw: Any",
+      "async": false
+    },
+    {
+      "name": "_map_int",
+      "arguments": "value: Any, mapping: dict[int, str]",
+      "async": false
+    },
+    {
+      "name": "_on_off",
+      "arguments": "value: Any",
+      "async": false
+    },
+    {
+      "name": "_active_device",
+      "arguments": "value: Any, configured_count: int=3",
+      "async": false
+    },
+    {
+      "name": "_health_slots",
+      "arguments": "health: dict, key: str",
+      "async": false
+    },
+    {
+      "name": "_health_item",
+      "arguments": "health: dict, slot: int",
+      "async": false
+    },
+    {
+      "name": "_soc_limit_icon",
+      "arguments": "state: str",
+      "async": false
+    },
+    {
+      "name": "_offgrid_icon",
+      "arguments": "state: str",
+      "async": false
+    },
+    {
+      "name": "_battery_order",
+      "arguments": "raw: Any",
+      "async": false
+    },
+    {
+      "name": "_pack_at",
+      "arguments": "pack_data: list[dict], battery_order: list[int] | None, battery: int",
+      "async": false
+    },
+    {
+      "name": "_pack_index",
+      "arguments": "battery_order: list[int] | None, battery: int",
+      "async": false
+    },
+    {
+      "name": "_int",
+      "arguments": "value: Any, default: int=0",
+      "async": false
+    },
+    {
+      "name": "add",
+      "arguments": "entity_id: str, state: Any, friendly_name: str, **attrs: Any",
+      "async": false
+    }
+  ],
+  "zendure_proxy_queue.py": [
+    {
+      "name": "_dedup_posts",
+      "arguments": "posts: list[tuple[dict, asyncio.Future]]",
+      "async": false
+    },
+    {
+      "name": "_open_futures",
+      "arguments": "futures: list[asyncio.Future]",
+      "async": false
+    },
+    {
+      "name": "__init__",
+      "arguments": "self",
+      "async": false
+    },
+    {
+      "name": "enqueue_get",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "enqueue_post",
+      "arguments": "self, payload: dict",
+      "async": true
+    },
+    {
+      "name": "drain",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "drain_gets_nowait",
+      "arguments": "self",
+      "async": true
+    },
+    {
+      "name": "depths",
+      "arguments": "self",
+      "async": true
+    }
+  ]
+}

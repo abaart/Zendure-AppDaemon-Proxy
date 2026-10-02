@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: GPL-3.0-only
+title: Zendure AppDaemon Proxy
+widget_dimensions: [160, 120]
+widget_size: [1, 1]
+columns: 4
+health:
+  widget_type: sensor
+  entity: sensor.proxy_zendure_pool_healthy
+  title: Pool health
+metrics:
+  widget_type: iframe
+  title: Requests
+  url_list:
+    - /app/zendure_proxy_metrics
+logs:
+  widget_type: iframe
+  title: Recent activity
+  url_list:
+    - /app/zendure_proxy_logs
+layout:
+  - health(4x1)
+  - metrics(4x3)
+  - logs(4x3)

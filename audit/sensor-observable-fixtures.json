@@ -1,0 +1,4082 @@
+[
+  {
+    "input": {
+      "properties": {
+        "latestPowerCmd": 111,
+        "electricLevel": 222,
+        "gridInputPower": 333,
+        "outputHomePower": 444,
+        "packInputPower": 555,
+        "outputPackPower": 666,
+        "minSoc": 777,
+        "socSet": 888,
+        "hyperTmp": 999,
+        "BatVolt": 1110,
+        "remainOutTime": 1221,
+        "packNum": 1332,
+        "rssi": 1443,
+        "inputLimit": 1554,
+        "outputLimit": 1665,
+        "chargeMaxLimit": 1776,
+        "inverseMaxPower": 1887,
+        "activeDevice": 0,
+        "equalMode": 0,
+        "alwaysDualMode": 0,
+        "dualModeDamper": 0,
+        "socLimit": 0,
+        "gridOffMode": 0,
+        "smartMode": 0,
+        "acMode": 0,
+        "antiPingpong": 0,
+        "antiPingpongActive": 0,
+        "relaySaver": 0,
+        "relaySaverActive": 0,
+        "electricLevel_1": 101,
+        "latestPowerCmd_1": 102,
+        "acMode_1": 0,
+        "inputLimit_1": 104,
+        "outputLimit_1": 105,
+        "outputPackPower_1": 106,
+        "packInputPower_1": 107,
+        "outputHomePower_1": 108,
+        "gridInputPower_1": 109,
+        "socStatus_1": 0,
+        "socLimit_1": 0,
+        "smartMode_1": 0,
+        "hyperTmp_1": 113,
+        "gridOffMode_1": 0,
+        "chargeMaxLimit_1": 115,
+        "inverseMaxPower_1": 116,
+        "effectiveChargeMax_1": 117,
+        "effectiveInverseMaxPower_1": 118,
+        "configuredChargeMax_1": 119,
+        "configuredInverseMaxPower_1": 120,
+        "sn_1": "fixture-sn-1",
+        "ipAddress_1": "192.0.2.1",
+        "electricLevel_2": 201,
+        "latestPowerCmd_2": 202,
+        "acMode_2": 0,
+        "inputLimit_2": 204,
+        "outputLimit_2": 205,
+        "outputPackPower_2": 206,
+        "packInputPower_2": 207,
+        "outputHomePower_2": 208,
+        "gridInputPower_2": 209,
+        "socStatus_2": 0,
+        "socLimit_2": 0,
+        "smartMode_2": 0,
+        "hyperTmp_2": 213,
+        "gridOffMode_2": 0,
+        "chargeMaxLimit_2": 215,
+        "inverseMaxPower_2": 216,
+        "effectiveChargeMax_2": 217,
+        "effectiveInverseMaxPower_2": 218,
+        "configuredChargeMax_2": 219,
+        "configuredInverseMaxPower_2": 220,
+        "sn_2": "fixture-sn-2",
+        "ipAddress_2": "192.0.2.2",
+        "electricLevel_3": 301,
+        "latestPowerCmd_3": 302,
+        "acMode_3": 0,
+        "inputLimit_3": 304,
+        "outputLimit_3": 305,
+        "outputPackPower_3": 306,
+        "packInputPower_3": 307,
+        "outputHomePower_3": 308,
+        "gridInputPower_3": 309,
+        "socStatus_3": 0,
+        "socLimit_3": 0,
+        "smartMode_3": 0,
+        "hyperTmp_3": 313,
+        "gridOffMode_3": 0,
+        "chargeMaxLimit_3": 315,
+        "inverseMaxPower_3": 316,
+        "effectiveChargeMax_3": 317,
+        "effectiveInverseMaxPower_3": 318,
+        "configuredChargeMax_3": 319,
+        "configuredInverseMaxPower_3": 320,
+        "sn_3": "fixture-sn-3",
+        "ipAddress_3": "192.0.2.3",
+        "proxyVersion": "v0.2.0"
+      },
+      "packData": [
+        {
+          "sn": "pack1",
+          "socLevel": 7,
+          "maxTemp": 2801,
+          "totalVol": 5201,
+          "batPower": 101,
+          "remainOutTime": 601
+        },
+        {
+          "sn": "pack2",
+          "socLevel": 14,
+          "maxTemp": 2802,
+          "totalVol": 5202,
+          "batPower": 102,
+          "remainOutTime": 602
+        },
+        {
+          "sn": "pack3",
+          "socLevel": 21,
+          "maxTemp": 2803,
+          "totalVol": 5203,
+          "batPower": 103,
+          "remainOutTime": 603
+        },
+        {
+          "sn": "pack4",
+          "socLevel": 28,
+          "maxTemp": 2804,
+          "totalVol": 5204,
+          "batPower": 104,
+          "remainOutTime": 604
+        }
+      ],
+      "proxyHealth": {
+        "configuredCount": 3,
+        "healthyCount": 3,
+        "lastSuccessfulGetAtBySlot": {
+          "1": 1000,
+          "2": 1001,
+          "3": 1002
+        }
+      }
+    },
+    "battery_order": "2;1;4;3",
+    "expected_sensors": {
+      "sensor.zendure_1_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 1 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-1",
+          "ip_address": "192.0.2.1",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 117,
+          "discharge_max_watts": 118,
+          "configured_charge_max_watts": 119,
+          "configured_discharge_max_watts": 120,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_laadpercentage": [
+        101,
+        {
+          "friendly_name": "Zendure 1 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_1": [
+        102,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 1",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_vermogen_aansturing": [
+        109,
+        {
+          "friendly_name": "Zendure 1 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 1 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_1_deep_standby",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_relais_stand": [
+        "Standby",
+        {
+          "friendly_name": "Zendure 1 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_kalibratie_bezig": [
+        "Nee",
+        {
+          "friendly_name": "Zendure 1 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_opslagmodus": [
+        "Opslaan in Flash",
+        {
+          "friendly_name": "Zendure 1 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 0,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_deep_standby": [
+        "Aan",
+        {
+          "friendly_name": "Zendure 1 Deep Standby",
+          "icon": "mdi:sleep",
+          "smart_mode": 0,
+          "source_entity_id": "sensor.zendure_1_opslagmodus",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_soc_limiet_status": [
+        "Normale werking",
+        {
+          "friendly_name": "Zendure 1 SOC-limiet Status",
+          "icon": "mdi:battery-medium",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_omvormer_temperatuur": [
+        -261.8,
+        {
+          "friendly_name": "Zendure 1 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_offgrid_modus": [
+        "Normaal",
+        {
+          "friendly_name": "Zendure 1 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_serienummer": [
+        "fixture-sn-1",
+        {
+          "friendly_name": "Zendure 1 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_ip_adres": [
+        "192.0.2.1",
+        {
+          "friendly_name": "Zendure 1 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 2 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-2",
+          "ip_address": "192.0.2.2",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 217,
+          "discharge_max_watts": 218,
+          "configured_charge_max_watts": 219,
+          "configured_discharge_max_watts": 220,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_laadpercentage": [
+        201,
+        {
+          "friendly_name": "Zendure 2 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_2": [
+        202,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 2",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_vermogen_aansturing": [
+        209,
+        {
+          "friendly_name": "Zendure 2 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 2 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_2_deep_standby",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_relais_stand": [
+        "Standby",
+        {
+          "friendly_name": "Zendure 2 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_kalibratie_bezig": [
+        "Nee",
+        {
+          "friendly_name": "Zendure 2 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_opslagmodus": [
+        "Opslaan in Flash",
+        {
+          "friendly_name": "Zendure 2 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 0,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_deep_standby": [
+        "Aan",
+        {
+          "friendly_name": "Zendure 2 Deep Standby",
+          "icon": "mdi:sleep",
+          "smart_mode": 0,
+          "source_entity_id": "sensor.zendure_2_opslagmodus",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_soc_limiet_status": [
+        "Normale werking",
+        {
+          "friendly_name": "Zendure 2 SOC-limiet Status",
+          "icon": "mdi:battery-medium",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_omvormer_temperatuur": [
+        -251.8,
+        {
+          "friendly_name": "Zendure 2 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_offgrid_modus": [
+        "Normaal",
+        {
+          "friendly_name": "Zendure 2 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_serienummer": [
+        "fixture-sn-2",
+        {
+          "friendly_name": "Zendure 2 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_ip_adres": [
+        "192.0.2.2",
+        {
+          "friendly_name": "Zendure 2 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_3_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 3 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-3",
+          "ip_address": "192.0.2.3",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 317,
+          "discharge_max_watts": 318,
+          "configured_charge_max_watts": 319,
+          "configured_discharge_max_watts": 320,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_laadpercentage": [
+        301,
+        {
+          "friendly_name": "Zendure 3 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_3": [
+        302,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 3",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_vermogen_aansturing": [
+        309,
+        {
+          "friendly_name": "Zendure 3 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 3 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_3_deep_standby",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_relais_stand": [
+        "Standby",
+        {
+          "friendly_name": "Zendure 3 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_kalibratie_bezig": [
+        "Nee",
+        {
+          "friendly_name": "Zendure 3 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_opslagmodus": [
+        "Opslaan in Flash",
+        {
+          "friendly_name": "Zendure 3 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 0,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_deep_standby": [
+        "Aan",
+        {
+          "friendly_name": "Zendure 3 Deep Standby",
+          "icon": "mdi:sleep",
+          "smart_mode": 0,
+          "source_entity_id": "sensor.zendure_3_opslagmodus",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_soc_limiet_status": [
+        "Normale werking",
+        {
+          "friendly_name": "Zendure 3 SOC-limiet Status",
+          "icon": "mdi:battery-medium",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_omvormer_temperatuur": [
+        -241.8,
+        {
+          "friendly_name": "Zendure 3 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_offgrid_modus": [
+        "Normaal",
+        {
+          "friendly_name": "Zendure 3 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_serienummer": [
+        "fixture-sn-3",
+        {
+          "friendly_name": "Zendure 3 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_ip_adres": [
+        "192.0.2.3",
+        {
+          "friendly_name": "Zendure 3 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.proxy_zendure_pool_healthy": [
+        "Healthy",
+        {
+          "friendly_name": "Proxy Zendure Pool Healthy",
+          "icon": "mdi:battery-heart",
+          "configured_count": 3,
+          "healthy_count": 3,
+          "unhealthy_count": 0,
+          "excluded_count": 0,
+          "recovering_count": 0,
+          "degraded_count": 0,
+          "dead_count": 0,
+          "unhealthy_serial_numbers": [],
+          "proxy_last_successful_get_at": 1000,
+          "proxy_last_successful_get_at_by_slot": {
+            "1": 1000,
+            "2": 1001,
+            "3": 1002
+          }
+        }
+      ],
+      "sensor.vermogensopdracht": [
+        111,
+        {
+          "friendly_name": "Vermogensopdracht",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_actief_device": [
+        "Geen",
+        {
+          "friendly_name": "Zendure Actief Device",
+          "icon": "mdi:battery",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_status": [
+        "Uit",
+        {
+          "friendly_name": "Reserve Mode Status",
+          "icon": "mdi:swap-horizontal-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_activatie_modus": [
+        "threshold",
+        {
+          "friendly_name": "Reserve Mode Activatie Modus",
+          "icon": "mdi:tune",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor",
+          "icon": "mdi:flash",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor_bron": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor Bron",
+          "icon": "mdi:source-branch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Reserve Device",
+          "icon": "mdi:battery-clock",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_gepauzeerd_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_power": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Reserve Power",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_service_boost": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Service Boost",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_winst_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Winst",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_verlies_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Verlies",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_netto_euro": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Netto Euro",
+          "unit_of_measurement": "\u20ac",
+          "state_class": "measurement",
+          "icon": "mdi:currency-eur",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_status": [
+        "Uit",
+        {
+          "friendly_name": "Relay Saver Status",
+          "icon": "mdi:electric-switch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_vertraagd_device": [
+        "Geen",
+        {
+          "friendly_name": "Relay Saver Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_minimumvermogen": [
+        0,
+        {
+          "friendly_name": "Relay Saver Minimumvermogen",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_drempel": [
+        0,
+        {
+          "friendly_name": "Relay Saver Drempel",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_resterende_seconden": [
+        0,
+        {
+          "friendly_name": "Relay Saver Resterende Seconden",
+          "unit_of_measurement": "s",
+          "state_class": "measurement",
+          "icon": "mdi:timer-sand",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.dual_mode_demper_status": [
+        "Uit",
+        {
+          "friendly_name": "Dual Mode Demper Status",
+          "icon": "mdi:speedometer-medium",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.synchroon_laden_status": [
+        "Uit",
+        {
+          "friendly_name": "Synchroon Laden Status",
+          "icon": "mdi:battery-sync",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.beide_actief_status": [
+        "Uit",
+        {
+          "friendly_name": "Beide Actief Status",
+          "icon": "mdi:format-columns",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_proxy_versie": [
+        "v0.2.0",
+        {
+          "friendly_name": "Zendure Proxy Versie",
+          "icon": "mdi:call-split",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "properties": {
+        "latestPowerCmd": 111,
+        "electricLevel": 222,
+        "gridInputPower": 333,
+        "outputHomePower": 444,
+        "packInputPower": 555,
+        "outputPackPower": 666,
+        "minSoc": 777,
+        "socSet": 888,
+        "hyperTmp": 999,
+        "BatVolt": 1110,
+        "remainOutTime": 1221,
+        "packNum": 1332,
+        "rssi": 1443,
+        "inputLimit": 1554,
+        "outputLimit": 1665,
+        "chargeMaxLimit": 1776,
+        "inverseMaxPower": 1887,
+        "activeDevice": 1,
+        "equalMode": 1,
+        "alwaysDualMode": 1,
+        "dualModeDamper": 1,
+        "socLimit": 1,
+        "gridOffMode": 1,
+        "smartMode": 1,
+        "acMode": 1,
+        "antiPingpong": 1,
+        "antiPingpongActive": 1,
+        "relaySaver": 1,
+        "relaySaverActive": 1,
+        "electricLevel_1": 101,
+        "latestPowerCmd_1": 102,
+        "acMode_1": 1,
+        "inputLimit_1": 104,
+        "outputLimit_1": 105,
+        "outputPackPower_1": 106,
+        "packInputPower_1": 107,
+        "outputHomePower_1": 108,
+        "gridInputPower_1": 109,
+        "socStatus_1": 1,
+        "socLimit_1": 1,
+        "smartMode_1": 1,
+        "hyperTmp_1": 113,
+        "gridOffMode_1": 1,
+        "chargeMaxLimit_1": 115,
+        "inverseMaxPower_1": 116,
+        "effectiveChargeMax_1": 117,
+        "effectiveInverseMaxPower_1": 118,
+        "configuredChargeMax_1": 119,
+        "configuredInverseMaxPower_1": 120,
+        "sn_1": "fixture-sn-1",
+        "ipAddress_1": "192.0.2.1",
+        "electricLevel_2": 201,
+        "latestPowerCmd_2": 202,
+        "acMode_2": 1,
+        "inputLimit_2": 204,
+        "outputLimit_2": 205,
+        "outputPackPower_2": 206,
+        "packInputPower_2": 207,
+        "outputHomePower_2": 208,
+        "gridInputPower_2": 209,
+        "socStatus_2": 1,
+        "socLimit_2": 1,
+        "smartMode_2": 1,
+        "hyperTmp_2": 213,
+        "gridOffMode_2": 1,
+        "chargeMaxLimit_2": 215,
+        "inverseMaxPower_2": 216,
+        "effectiveChargeMax_2": 217,
+        "effectiveInverseMaxPower_2": 218,
+        "configuredChargeMax_2": 219,
+        "configuredInverseMaxPower_2": 220,
+        "sn_2": "fixture-sn-2",
+        "ipAddress_2": "192.0.2.2",
+        "electricLevel_3": 301,
+        "latestPowerCmd_3": 302,
+        "acMode_3": 1,
+        "inputLimit_3": 304,
+        "outputLimit_3": 305,
+        "outputPackPower_3": 306,
+        "packInputPower_3": 307,
+        "outputHomePower_3": 308,
+        "gridInputPower_3": 309,
+        "socStatus_3": 1,
+        "socLimit_3": 1,
+        "smartMode_3": 1,
+        "hyperTmp_3": 313,
+        "gridOffMode_3": 1,
+        "chargeMaxLimit_3": 315,
+        "inverseMaxPower_3": 316,
+        "effectiveChargeMax_3": 317,
+        "effectiveInverseMaxPower_3": 318,
+        "configuredChargeMax_3": 319,
+        "configuredInverseMaxPower_3": 320,
+        "sn_3": "fixture-sn-3",
+        "ipAddress_3": "192.0.2.3",
+        "proxyVersion": "v0.2.0"
+      },
+      "packData": [
+        {
+          "sn": "pack1",
+          "socLevel": 7,
+          "maxTemp": 2801,
+          "totalVol": 5201,
+          "batPower": 101,
+          "remainOutTime": 601
+        },
+        {
+          "sn": "pack2",
+          "socLevel": 14,
+          "maxTemp": 2802,
+          "totalVol": 5202,
+          "batPower": 102,
+          "remainOutTime": 602
+        },
+        {
+          "sn": "pack3",
+          "socLevel": 21,
+          "maxTemp": 2803,
+          "totalVol": 5203,
+          "batPower": 103,
+          "remainOutTime": 603
+        },
+        {
+          "sn": "pack4",
+          "socLevel": 28,
+          "maxTemp": 2804,
+          "totalVol": 5204,
+          "batPower": 104,
+          "remainOutTime": 604
+        }
+      ],
+      "proxyHealth": {
+        "configuredCount": 3,
+        "healthyCount": 3,
+        "lastSuccessfulGetAtBySlot": {
+          "1": 1000,
+          "2": 1001,
+          "3": 1002
+        }
+      }
+    },
+    "battery_order": "2;1;4;3",
+    "expected_sensors": {
+      "sensor.zendure_1_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 1 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-1",
+          "ip_address": "192.0.2.1",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 117,
+          "discharge_max_watts": 118,
+          "configured_charge_max_watts": 119,
+          "configured_discharge_max_watts": 120,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_laadpercentage": [
+        101,
+        {
+          "friendly_name": "Zendure 1 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_1": [
+        102,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 1",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_vermogen_aansturing": [
+        109,
+        {
+          "friendly_name": "Zendure 1 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 1 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_1_deep_standby",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_relais_stand": [
+        "Oplaadstand",
+        {
+          "friendly_name": "Zendure 1 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_kalibratie_bezig": [
+        "Kalibreren",
+        {
+          "friendly_name": "Zendure 1 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_opslagmodus": [
+        "Opslaan in RAM",
+        {
+          "friendly_name": "Zendure 1 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 1,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_deep_standby": [
+        "Uit",
+        {
+          "friendly_name": "Zendure 1 Deep Standby",
+          "icon": "mdi:sleep-off",
+          "smart_mode": 1,
+          "source_entity_id": "sensor.zendure_1_opslagmodus",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_soc_limiet_status": [
+        "Laadlimiet bereikt",
+        {
+          "friendly_name": "Zendure 1 SOC-limiet Status",
+          "icon": "mdi:battery-high",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_omvormer_temperatuur": [
+        -261.8,
+        {
+          "friendly_name": "Zendure 1 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_offgrid_modus": [
+        "Eco",
+        {
+          "friendly_name": "Zendure 1 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_serienummer": [
+        "fixture-sn-1",
+        {
+          "friendly_name": "Zendure 1 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_ip_adres": [
+        "192.0.2.1",
+        {
+          "friendly_name": "Zendure 1 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 2 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-2",
+          "ip_address": "192.0.2.2",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 217,
+          "discharge_max_watts": 218,
+          "configured_charge_max_watts": 219,
+          "configured_discharge_max_watts": 220,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_laadpercentage": [
+        201,
+        {
+          "friendly_name": "Zendure 2 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_2": [
+        202,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 2",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_vermogen_aansturing": [
+        209,
+        {
+          "friendly_name": "Zendure 2 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 2 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_2_deep_standby",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_relais_stand": [
+        "Oplaadstand",
+        {
+          "friendly_name": "Zendure 2 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_kalibratie_bezig": [
+        "Kalibreren",
+        {
+          "friendly_name": "Zendure 2 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_opslagmodus": [
+        "Opslaan in RAM",
+        {
+          "friendly_name": "Zendure 2 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 1,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_deep_standby": [
+        "Uit",
+        {
+          "friendly_name": "Zendure 2 Deep Standby",
+          "icon": "mdi:sleep-off",
+          "smart_mode": 1,
+          "source_entity_id": "sensor.zendure_2_opslagmodus",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_soc_limiet_status": [
+        "Laadlimiet bereikt",
+        {
+          "friendly_name": "Zendure 2 SOC-limiet Status",
+          "icon": "mdi:battery-high",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_omvormer_temperatuur": [
+        -251.8,
+        {
+          "friendly_name": "Zendure 2 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_offgrid_modus": [
+        "Eco",
+        {
+          "friendly_name": "Zendure 2 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_serienummer": [
+        "fixture-sn-2",
+        {
+          "friendly_name": "Zendure 2 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_ip_adres": [
+        "192.0.2.2",
+        {
+          "friendly_name": "Zendure 2 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_3_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 3 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-3",
+          "ip_address": "192.0.2.3",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 317,
+          "discharge_max_watts": 318,
+          "configured_charge_max_watts": 319,
+          "configured_discharge_max_watts": 320,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_laadpercentage": [
+        301,
+        {
+          "friendly_name": "Zendure 3 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_3": [
+        302,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 3",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_vermogen_aansturing": [
+        309,
+        {
+          "friendly_name": "Zendure 3 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 3 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_3_deep_standby",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_relais_stand": [
+        "Oplaadstand",
+        {
+          "friendly_name": "Zendure 3 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_kalibratie_bezig": [
+        "Kalibreren",
+        {
+          "friendly_name": "Zendure 3 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_opslagmodus": [
+        "Opslaan in RAM",
+        {
+          "friendly_name": "Zendure 3 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 1,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_deep_standby": [
+        "Uit",
+        {
+          "friendly_name": "Zendure 3 Deep Standby",
+          "icon": "mdi:sleep-off",
+          "smart_mode": 1,
+          "source_entity_id": "sensor.zendure_3_opslagmodus",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_soc_limiet_status": [
+        "Laadlimiet bereikt",
+        {
+          "friendly_name": "Zendure 3 SOC-limiet Status",
+          "icon": "mdi:battery-high",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_omvormer_temperatuur": [
+        -241.8,
+        {
+          "friendly_name": "Zendure 3 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_offgrid_modus": [
+        "Eco",
+        {
+          "friendly_name": "Zendure 3 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_serienummer": [
+        "fixture-sn-3",
+        {
+          "friendly_name": "Zendure 3 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_ip_adres": [
+        "192.0.2.3",
+        {
+          "friendly_name": "Zendure 3 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.proxy_zendure_pool_healthy": [
+        "Healthy",
+        {
+          "friendly_name": "Proxy Zendure Pool Healthy",
+          "icon": "mdi:battery-heart",
+          "configured_count": 3,
+          "healthy_count": 3,
+          "unhealthy_count": 0,
+          "excluded_count": 0,
+          "recovering_count": 0,
+          "degraded_count": 0,
+          "dead_count": 0,
+          "unhealthy_serial_numbers": [],
+          "proxy_last_successful_get_at": 1000,
+          "proxy_last_successful_get_at_by_slot": {
+            "1": 1000,
+            "2": 1001,
+            "3": 1002
+          }
+        }
+      ],
+      "sensor.vermogensopdracht": [
+        111,
+        {
+          "friendly_name": "Vermogensopdracht",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_actief_device": [
+        "Zendure 1",
+        {
+          "friendly_name": "Zendure Actief Device",
+          "icon": "mdi:battery",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_status": [
+        "Aan",
+        {
+          "friendly_name": "Reserve Mode Status",
+          "icon": "mdi:swap-horizontal-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_activatie_modus": [
+        "threshold",
+        {
+          "friendly_name": "Reserve Mode Activatie Modus",
+          "icon": "mdi:tune",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor",
+          "icon": "mdi:flash",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor_bron": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor Bron",
+          "icon": "mdi:source-branch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Reserve Device",
+          "icon": "mdi:battery-clock",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_gepauzeerd_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_power": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Reserve Power",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_service_boost": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Service Boost",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_winst_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Winst",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_verlies_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Verlies",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_netto_euro": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Netto Euro",
+          "unit_of_measurement": "\u20ac",
+          "state_class": "measurement",
+          "icon": "mdi:currency-eur",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_status": [
+        "Aan",
+        {
+          "friendly_name": "Relay Saver Status",
+          "icon": "mdi:electric-switch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_vertraagd_device": [
+        "Geen",
+        {
+          "friendly_name": "Relay Saver Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_minimumvermogen": [
+        0,
+        {
+          "friendly_name": "Relay Saver Minimumvermogen",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_drempel": [
+        0,
+        {
+          "friendly_name": "Relay Saver Drempel",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_resterende_seconden": [
+        0,
+        {
+          "friendly_name": "Relay Saver Resterende Seconden",
+          "unit_of_measurement": "s",
+          "state_class": "measurement",
+          "icon": "mdi:timer-sand",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.dual_mode_demper_status": [
+        "Aan",
+        {
+          "friendly_name": "Dual Mode Demper Status",
+          "icon": "mdi:speedometer-medium",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.synchroon_laden_status": [
+        "Aan",
+        {
+          "friendly_name": "Synchroon Laden Status",
+          "icon": "mdi:battery-sync",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.beide_actief_status": [
+        "Aan",
+        {
+          "friendly_name": "Beide Actief Status",
+          "icon": "mdi:format-columns",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_proxy_versie": [
+        "v0.2.0",
+        {
+          "friendly_name": "Zendure Proxy Versie",
+          "icon": "mdi:call-split",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "properties": {
+        "latestPowerCmd": 111,
+        "electricLevel": 222,
+        "gridInputPower": 333,
+        "outputHomePower": 444,
+        "packInputPower": 555,
+        "outputPackPower": 666,
+        "minSoc": 777,
+        "socSet": 888,
+        "hyperTmp": 999,
+        "BatVolt": 1110,
+        "remainOutTime": 1221,
+        "packNum": 1332,
+        "rssi": 1443,
+        "inputLimit": 1554,
+        "outputLimit": 1665,
+        "chargeMaxLimit": 1776,
+        "inverseMaxPower": 1887,
+        "activeDevice": 2,
+        "equalMode": 2,
+        "alwaysDualMode": 2,
+        "dualModeDamper": 2,
+        "socLimit": 2,
+        "gridOffMode": 2,
+        "smartMode": 2,
+        "acMode": 2,
+        "antiPingpong": 2,
+        "antiPingpongActive": 2,
+        "relaySaver": 2,
+        "relaySaverActive": 2,
+        "electricLevel_1": 101,
+        "latestPowerCmd_1": 102,
+        "acMode_1": 2,
+        "inputLimit_1": 104,
+        "outputLimit_1": 105,
+        "outputPackPower_1": 106,
+        "packInputPower_1": 107,
+        "outputHomePower_1": 108,
+        "gridInputPower_1": 109,
+        "socStatus_1": 2,
+        "socLimit_1": 2,
+        "smartMode_1": 2,
+        "hyperTmp_1": 113,
+        "gridOffMode_1": 2,
+        "chargeMaxLimit_1": 115,
+        "inverseMaxPower_1": 116,
+        "effectiveChargeMax_1": 117,
+        "effectiveInverseMaxPower_1": 118,
+        "configuredChargeMax_1": 119,
+        "configuredInverseMaxPower_1": 120,
+        "sn_1": "fixture-sn-1",
+        "ipAddress_1": "192.0.2.1",
+        "electricLevel_2": 201,
+        "latestPowerCmd_2": 202,
+        "acMode_2": 2,
+        "inputLimit_2": 204,
+        "outputLimit_2": 205,
+        "outputPackPower_2": 206,
+        "packInputPower_2": 207,
+        "outputHomePower_2": 208,
+        "gridInputPower_2": 209,
+        "socStatus_2": 2,
+        "socLimit_2": 2,
+        "smartMode_2": 2,
+        "hyperTmp_2": 213,
+        "gridOffMode_2": 2,
+        "chargeMaxLimit_2": 215,
+        "inverseMaxPower_2": 216,
+        "effectiveChargeMax_2": 217,
+        "effectiveInverseMaxPower_2": 218,
+        "configuredChargeMax_2": 219,
+        "configuredInverseMaxPower_2": 220,
+        "sn_2": "fixture-sn-2",
+        "ipAddress_2": "192.0.2.2",
+        "electricLevel_3": 301,
+        "latestPowerCmd_3": 302,
+        "acMode_3": 2,
+        "inputLimit_3": 304,
+        "outputLimit_3": 305,
+        "outputPackPower_3": 306,
+        "packInputPower_3": 307,
+        "outputHomePower_3": 308,
+        "gridInputPower_3": 309,
+        "socStatus_3": 2,
+        "socLimit_3": 2,
+        "smartMode_3": 2,
+        "hyperTmp_3": 313,
+        "gridOffMode_3": 2,
+        "chargeMaxLimit_3": 315,
+        "inverseMaxPower_3": 316,
+        "effectiveChargeMax_3": 317,
+        "effectiveInverseMaxPower_3": 318,
+        "configuredChargeMax_3": 319,
+        "configuredInverseMaxPower_3": 320,
+        "sn_3": "fixture-sn-3",
+        "ipAddress_3": "192.0.2.3",
+        "proxyVersion": "v0.2.0"
+      },
+      "packData": [
+        {
+          "sn": "pack1",
+          "socLevel": 7,
+          "maxTemp": 2801,
+          "totalVol": 5201,
+          "batPower": 101,
+          "remainOutTime": 601
+        },
+        {
+          "sn": "pack2",
+          "socLevel": 14,
+          "maxTemp": 2802,
+          "totalVol": 5202,
+          "batPower": 102,
+          "remainOutTime": 602
+        },
+        {
+          "sn": "pack3",
+          "socLevel": 21,
+          "maxTemp": 2803,
+          "totalVol": 5203,
+          "batPower": 103,
+          "remainOutTime": 603
+        },
+        {
+          "sn": "pack4",
+          "socLevel": 28,
+          "maxTemp": 2804,
+          "totalVol": 5204,
+          "batPower": 104,
+          "remainOutTime": 604
+        }
+      ],
+      "proxyHealth": {
+        "configuredCount": 3,
+        "healthyCount": 3,
+        "lastSuccessfulGetAtBySlot": {
+          "1": 1000,
+          "2": 1001,
+          "3": 1002
+        }
+      }
+    },
+    "battery_order": "2;1;4;3",
+    "expected_sensors": {
+      "sensor.zendure_1_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 1 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-1",
+          "ip_address": "192.0.2.1",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 117,
+          "discharge_max_watts": 118,
+          "configured_charge_max_watts": 119,
+          "configured_discharge_max_watts": 120,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_laadpercentage": [
+        101,
+        {
+          "friendly_name": "Zendure 1 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_1": [
+        102,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 1",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_vermogen_aansturing": [
+        109,
+        {
+          "friendly_name": "Zendure 1 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 1 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_1_deep_standby",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_relais_stand": [
+        "Ontlaadstand",
+        {
+          "friendly_name": "Zendure 1 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_kalibratie_bezig": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_opslagmodus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 2,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_deep_standby": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Deep Standby",
+          "icon": "mdi:help-circle-outline",
+          "smart_mode": 2,
+          "source_entity_id": "sensor.zendure_1_opslagmodus",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_soc_limiet_status": [
+        "Ontlaadlimiet bereikt",
+        {
+          "friendly_name": "Zendure 1 SOC-limiet Status",
+          "icon": "mdi:battery-low",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_omvormer_temperatuur": [
+        -261.8,
+        {
+          "friendly_name": "Zendure 1 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_offgrid_modus": [
+        "Uitgeschakeld",
+        {
+          "friendly_name": "Zendure 1 Offgrid Modus",
+          "icon": "mdi:power-plug-off",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_serienummer": [
+        "fixture-sn-1",
+        {
+          "friendly_name": "Zendure 1 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_ip_adres": [
+        "192.0.2.1",
+        {
+          "friendly_name": "Zendure 1 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 2 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-2",
+          "ip_address": "192.0.2.2",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 217,
+          "discharge_max_watts": 218,
+          "configured_charge_max_watts": 219,
+          "configured_discharge_max_watts": 220,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_laadpercentage": [
+        201,
+        {
+          "friendly_name": "Zendure 2 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_2": [
+        202,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 2",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_vermogen_aansturing": [
+        209,
+        {
+          "friendly_name": "Zendure 2 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 2 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_2_deep_standby",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_relais_stand": [
+        "Ontlaadstand",
+        {
+          "friendly_name": "Zendure 2 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_kalibratie_bezig": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_opslagmodus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 2,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_deep_standby": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Deep Standby",
+          "icon": "mdi:help-circle-outline",
+          "smart_mode": 2,
+          "source_entity_id": "sensor.zendure_2_opslagmodus",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_soc_limiet_status": [
+        "Ontlaadlimiet bereikt",
+        {
+          "friendly_name": "Zendure 2 SOC-limiet Status",
+          "icon": "mdi:battery-low",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_omvormer_temperatuur": [
+        -251.8,
+        {
+          "friendly_name": "Zendure 2 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_offgrid_modus": [
+        "Uitgeschakeld",
+        {
+          "friendly_name": "Zendure 2 Offgrid Modus",
+          "icon": "mdi:power-plug-off",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_serienummer": [
+        "fixture-sn-2",
+        {
+          "friendly_name": "Zendure 2 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_ip_adres": [
+        "192.0.2.2",
+        {
+          "friendly_name": "Zendure 2 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_3_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 3 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-3",
+          "ip_address": "192.0.2.3",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 317,
+          "discharge_max_watts": 318,
+          "configured_charge_max_watts": 319,
+          "configured_discharge_max_watts": 320,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_laadpercentage": [
+        301,
+        {
+          "friendly_name": "Zendure 3 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_3": [
+        302,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 3",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_vermogen_aansturing": [
+        309,
+        {
+          "friendly_name": "Zendure 3 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 3 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_3_deep_standby",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_relais_stand": [
+        "Ontlaadstand",
+        {
+          "friendly_name": "Zendure 3 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_kalibratie_bezig": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_opslagmodus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 2,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_deep_standby": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Deep Standby",
+          "icon": "mdi:help-circle-outline",
+          "smart_mode": 2,
+          "source_entity_id": "sensor.zendure_3_opslagmodus",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_soc_limiet_status": [
+        "Ontlaadlimiet bereikt",
+        {
+          "friendly_name": "Zendure 3 SOC-limiet Status",
+          "icon": "mdi:battery-low",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_omvormer_temperatuur": [
+        -241.8,
+        {
+          "friendly_name": "Zendure 3 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_offgrid_modus": [
+        "Uitgeschakeld",
+        {
+          "friendly_name": "Zendure 3 Offgrid Modus",
+          "icon": "mdi:power-plug-off",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_serienummer": [
+        "fixture-sn-3",
+        {
+          "friendly_name": "Zendure 3 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_ip_adres": [
+        "192.0.2.3",
+        {
+          "friendly_name": "Zendure 3 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.proxy_zendure_pool_healthy": [
+        "Healthy",
+        {
+          "friendly_name": "Proxy Zendure Pool Healthy",
+          "icon": "mdi:battery-heart",
+          "configured_count": 3,
+          "healthy_count": 3,
+          "unhealthy_count": 0,
+          "excluded_count": 0,
+          "recovering_count": 0,
+          "degraded_count": 0,
+          "dead_count": 0,
+          "unhealthy_serial_numbers": [],
+          "proxy_last_successful_get_at": 1000,
+          "proxy_last_successful_get_at_by_slot": {
+            "1": 1000,
+            "2": 1001,
+            "3": 1002
+          }
+        }
+      ],
+      "sensor.vermogensopdracht": [
+        111,
+        {
+          "friendly_name": "Vermogensopdracht",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_actief_device": [
+        "Zendure 2",
+        {
+          "friendly_name": "Zendure Actief Device",
+          "icon": "mdi:battery",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Reserve Mode Status",
+          "icon": "mdi:swap-horizontal-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_activatie_modus": [
+        "threshold",
+        {
+          "friendly_name": "Reserve Mode Activatie Modus",
+          "icon": "mdi:tune",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor",
+          "icon": "mdi:flash",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor_bron": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor Bron",
+          "icon": "mdi:source-branch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Reserve Device",
+          "icon": "mdi:battery-clock",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_gepauzeerd_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_power": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Reserve Power",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_service_boost": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Service Boost",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_winst_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Winst",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_verlies_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Verlies",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_netto_euro": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Netto Euro",
+          "unit_of_measurement": "\u20ac",
+          "state_class": "measurement",
+          "icon": "mdi:currency-eur",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Relay Saver Status",
+          "icon": "mdi:electric-switch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_vertraagd_device": [
+        "Geen",
+        {
+          "friendly_name": "Relay Saver Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_minimumvermogen": [
+        0,
+        {
+          "friendly_name": "Relay Saver Minimumvermogen",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_drempel": [
+        0,
+        {
+          "friendly_name": "Relay Saver Drempel",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_resterende_seconden": [
+        0,
+        {
+          "friendly_name": "Relay Saver Resterende Seconden",
+          "unit_of_measurement": "s",
+          "state_class": "measurement",
+          "icon": "mdi:timer-sand",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.dual_mode_demper_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Dual Mode Demper Status",
+          "icon": "mdi:speedometer-medium",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.synchroon_laden_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Synchroon Laden Status",
+          "icon": "mdi:battery-sync",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.beide_actief_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Beide Actief Status",
+          "icon": "mdi:format-columns",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_proxy_versie": [
+        "v0.2.0",
+        {
+          "friendly_name": "Zendure Proxy Versie",
+          "icon": "mdi:call-split",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "properties": {
+        "latestPowerCmd": 111,
+        "electricLevel": 222,
+        "gridInputPower": 333,
+        "outputHomePower": 444,
+        "packInputPower": 555,
+        "outputPackPower": 666,
+        "minSoc": 777,
+        "socSet": 888,
+        "hyperTmp": 999,
+        "BatVolt": 1110,
+        "remainOutTime": 1221,
+        "packNum": 1332,
+        "rssi": 1443,
+        "inputLimit": 1554,
+        "outputLimit": 1665,
+        "chargeMaxLimit": 1776,
+        "inverseMaxPower": 1887,
+        "activeDevice": 3,
+        "equalMode": 3,
+        "alwaysDualMode": 3,
+        "dualModeDamper": 3,
+        "socLimit": 3,
+        "gridOffMode": 3,
+        "smartMode": 3,
+        "acMode": 3,
+        "antiPingpong": 3,
+        "antiPingpongActive": 3,
+        "relaySaver": 3,
+        "relaySaverActive": 3,
+        "electricLevel_1": 101,
+        "latestPowerCmd_1": 102,
+        "acMode_1": 3,
+        "inputLimit_1": 104,
+        "outputLimit_1": 105,
+        "outputPackPower_1": 106,
+        "packInputPower_1": 107,
+        "outputHomePower_1": 108,
+        "gridInputPower_1": 109,
+        "socStatus_1": 3,
+        "socLimit_1": 3,
+        "smartMode_1": 3,
+        "hyperTmp_1": 113,
+        "gridOffMode_1": 3,
+        "chargeMaxLimit_1": 115,
+        "inverseMaxPower_1": 116,
+        "effectiveChargeMax_1": 117,
+        "effectiveInverseMaxPower_1": 118,
+        "configuredChargeMax_1": 119,
+        "configuredInverseMaxPower_1": 120,
+        "sn_1": "fixture-sn-1",
+        "ipAddress_1": "192.0.2.1",
+        "electricLevel_2": 201,
+        "latestPowerCmd_2": 202,
+        "acMode_2": 3,
+        "inputLimit_2": 204,
+        "outputLimit_2": 205,
+        "outputPackPower_2": 206,
+        "packInputPower_2": 207,
+        "outputHomePower_2": 208,
+        "gridInputPower_2": 209,
+        "socStatus_2": 3,
+        "socLimit_2": 3,
+        "smartMode_2": 3,
+        "hyperTmp_2": 213,
+        "gridOffMode_2": 3,
+        "chargeMaxLimit_2": 215,
+        "inverseMaxPower_2": 216,
+        "effectiveChargeMax_2": 217,
+        "effectiveInverseMaxPower_2": 218,
+        "configuredChargeMax_2": 219,
+        "configuredInverseMaxPower_2": 220,
+        "sn_2": "fixture-sn-2",
+        "ipAddress_2": "192.0.2.2",
+        "electricLevel_3": 301,
+        "latestPowerCmd_3": 302,
+        "acMode_3": 3,
+        "inputLimit_3": 304,
+        "outputLimit_3": 305,
+        "outputPackPower_3": 306,
+        "packInputPower_3": 307,
+        "outputHomePower_3": 308,
+        "gridInputPower_3": 309,
+        "socStatus_3": 3,
+        "socLimit_3": 3,
+        "smartMode_3": 3,
+        "hyperTmp_3": 313,
+        "gridOffMode_3": 3,
+        "chargeMaxLimit_3": 315,
+        "inverseMaxPower_3": 316,
+        "effectiveChargeMax_3": 317,
+        "effectiveInverseMaxPower_3": 318,
+        "configuredChargeMax_3": 319,
+        "configuredInverseMaxPower_3": 320,
+        "sn_3": "fixture-sn-3",
+        "ipAddress_3": "192.0.2.3",
+        "proxyVersion": "v0.2.0"
+      },
+      "packData": [
+        {
+          "sn": "pack1",
+          "socLevel": 7,
+          "maxTemp": 2801,
+          "totalVol": 5201,
+          "batPower": 101,
+          "remainOutTime": 601
+        },
+        {
+          "sn": "pack2",
+          "socLevel": 14,
+          "maxTemp": 2802,
+          "totalVol": 5202,
+          "batPower": 102,
+          "remainOutTime": 602
+        },
+        {
+          "sn": "pack3",
+          "socLevel": 21,
+          "maxTemp": 2803,
+          "totalVol": 5203,
+          "batPower": 103,
+          "remainOutTime": 603
+        },
+        {
+          "sn": "pack4",
+          "socLevel": 28,
+          "maxTemp": 2804,
+          "totalVol": 5204,
+          "batPower": 104,
+          "remainOutTime": 604
+        }
+      ],
+      "proxyHealth": {
+        "configuredCount": 3,
+        "healthyCount": 3,
+        "lastSuccessfulGetAtBySlot": {
+          "1": 1000,
+          "2": 1001,
+          "3": 1002
+        }
+      }
+    },
+    "battery_order": "2;1;4;3",
+    "expected_sensors": {
+      "sensor.zendure_1_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 1 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-1",
+          "ip_address": "192.0.2.1",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 117,
+          "discharge_max_watts": 118,
+          "configured_charge_max_watts": 119,
+          "configured_discharge_max_watts": 120,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_laadpercentage": [
+        101,
+        {
+          "friendly_name": "Zendure 1 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_1": [
+        102,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 1",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_vermogen_aansturing": [
+        109,
+        {
+          "friendly_name": "Zendure 1 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 1 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_1_deep_standby",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_relais_stand": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_kalibratie_bezig": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_opslagmodus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 3,
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_deep_standby": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Deep Standby",
+          "icon": "mdi:help-circle-outline",
+          "smart_mode": 3,
+          "source_entity_id": "sensor.zendure_1_opslagmodus",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_soc_limiet_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 SOC-limiet Status",
+          "icon": "mdi:battery-outline",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_omvormer_temperatuur": [
+        -261.8,
+        {
+          "friendly_name": "Zendure 1 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_offgrid_modus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 1 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_serienummer": [
+        "fixture-sn-1",
+        {
+          "friendly_name": "Zendure 1 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_1_ip_adres": [
+        "192.0.2.1",
+        {
+          "friendly_name": "Zendure 1 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 2 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-2",
+          "ip_address": "192.0.2.2",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 217,
+          "discharge_max_watts": 218,
+          "configured_charge_max_watts": 219,
+          "configured_discharge_max_watts": 220,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_laadpercentage": [
+        201,
+        {
+          "friendly_name": "Zendure 2 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_2": [
+        202,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 2",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_vermogen_aansturing": [
+        209,
+        {
+          "friendly_name": "Zendure 2 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 2 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_2_deep_standby",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_relais_stand": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_kalibratie_bezig": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_opslagmodus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 3,
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_deep_standby": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Deep Standby",
+          "icon": "mdi:help-circle-outline",
+          "smart_mode": 3,
+          "source_entity_id": "sensor.zendure_2_opslagmodus",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_soc_limiet_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 SOC-limiet Status",
+          "icon": "mdi:battery-outline",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_omvormer_temperatuur": [
+        -251.8,
+        {
+          "friendly_name": "Zendure 2 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_offgrid_modus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 2 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_serienummer": [
+        "fixture-sn-2",
+        {
+          "friendly_name": "Zendure 2 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_2_ip_adres": [
+        "192.0.2.2",
+        {
+          "friendly_name": "Zendure 2 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1001
+        }
+      ],
+      "sensor.zendure_3_health": [
+        "Healthy",
+        {
+          "friendly_name": "Zendure 3 Health",
+          "icon": "mdi:heart-pulse",
+          "serial_number": "fixture-sn-3",
+          "ip_address": "192.0.2.3",
+          "last_successful_get_age_seconds": null,
+          "excluded_from_power": false,
+          "recovery_seconds_remaining": 0.0,
+          "charge_max_watts": 317,
+          "discharge_max_watts": 318,
+          "configured_charge_max_watts": 319,
+          "configured_discharge_max_watts": 320,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_laadpercentage": [
+        301,
+        {
+          "friendly_name": "Zendure 3 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.vermogensopdracht_zendure_3": [
+        302,
+        {
+          "friendly_name": "Vermogensopdracht Zendure 3",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_vermogen_aansturing": [
+        309,
+        {
+          "friendly_name": "Zendure 3 Vermogen Aansturing",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_modus": [
+        "Opladen",
+        {
+          "friendly_name": "Zendure 3 Vermogensmodus",
+          "icon": "mdi:battery-plus-variant",
+          "mode_basis": "gridInputPower/outputHomePower",
+          "deep_standby_entity_id": "sensor.zendure_3_deep_standby",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_relais_stand": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Relais Stand",
+          "icon": "mdi:swap-vertical-bold",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_kalibratie_bezig": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Kalibratie bezig",
+          "icon": "mdi:battery-heart-variant",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_opslagmodus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Opslagmodus",
+          "icon": "mdi:floppy",
+          "smart_mode": 3,
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_deep_standby": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Deep Standby",
+          "icon": "mdi:help-circle-outline",
+          "smart_mode": 3,
+          "source_entity_id": "sensor.zendure_3_opslagmodus",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_soc_limiet_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 SOC-limiet Status",
+          "icon": "mdi:battery-outline",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_omvormer_temperatuur": [
+        -241.8,
+        {
+          "friendly_name": "Zendure 3 Omvormer Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_offgrid_modus": [
+        "Onbekend",
+        {
+          "friendly_name": "Zendure 3 Offgrid Modus",
+          "icon": "mdi:power-plug",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_serienummer": [
+        "fixture-sn-3",
+        {
+          "friendly_name": "Zendure 3 Serienummer",
+          "icon": "mdi:identifier",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.zendure_3_ip_adres": [
+        "192.0.2.3",
+        {
+          "friendly_name": "Zendure 3 IP Adres",
+          "icon": "mdi:ip",
+          "proxy_last_successful_get_at": 1002
+        }
+      ],
+      "sensor.proxy_zendure_pool_healthy": [
+        "Healthy",
+        {
+          "friendly_name": "Proxy Zendure Pool Healthy",
+          "icon": "mdi:battery-heart",
+          "configured_count": 3,
+          "healthy_count": 3,
+          "unhealthy_count": 0,
+          "excluded_count": 0,
+          "recovering_count": 0,
+          "degraded_count": 0,
+          "dead_count": 0,
+          "unhealthy_serial_numbers": [],
+          "proxy_last_successful_get_at": 1000,
+          "proxy_last_successful_get_at_by_slot": {
+            "1": 1000,
+            "2": 1001,
+            "3": 1002
+          }
+        }
+      ],
+      "sensor.vermogensopdracht": [
+        111,
+        {
+          "friendly_name": "Vermogensopdracht",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_actief_device": [
+        "Zendure 1 en Zendure 2",
+        {
+          "friendly_name": "Zendure Actief Device",
+          "icon": "mdi:battery",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Reserve Mode Status",
+          "icon": "mdi:swap-horizontal-bold",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_activatie_modus": [
+        "threshold",
+        {
+          "friendly_name": "Reserve Mode Activatie Modus",
+          "icon": "mdi:tune",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor",
+          "icon": "mdi:flash",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_p1_sensor_bron": [
+        "",
+        {
+          "friendly_name": "Reserve Mode P1 Sensor Bron",
+          "icon": "mdi:source-branch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Reserve Device",
+          "icon": "mdi:battery-clock",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_gepauzeerd_device": [
+        "Geen",
+        {
+          "friendly_name": "Reserve Mode Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_reserve_power": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Reserve Power",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_service_boost": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Service Boost",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_winst_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Winst",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_verlies_kwh": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Verlies",
+          "unit_of_measurement": "kWh",
+          "state_class": "measurement",
+          "device_class": "energy",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.anti_pingpong_smart_netto_euro": [
+        0,
+        {
+          "friendly_name": "Reserve Mode Smart Netto Euro",
+          "unit_of_measurement": "\u20ac",
+          "state_class": "measurement",
+          "icon": "mdi:currency-eur",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Relay Saver Status",
+          "icon": "mdi:electric-switch",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_vertraagd_device": [
+        "Geen",
+        {
+          "friendly_name": "Relay Saver Vertraagd Device",
+          "icon": "mdi:timer-pause",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_minimumvermogen": [
+        0,
+        {
+          "friendly_name": "Relay Saver Minimumvermogen",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_drempel": [
+        0,
+        {
+          "friendly_name": "Relay Saver Drempel",
+          "unit_of_measurement": "W",
+          "state_class": "measurement",
+          "device_class": "power",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.relay_saver_resterende_seconden": [
+        0,
+        {
+          "friendly_name": "Relay Saver Resterende Seconden",
+          "unit_of_measurement": "s",
+          "state_class": "measurement",
+          "icon": "mdi:timer-sand",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.dual_mode_demper_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Dual Mode Demper Status",
+          "icon": "mdi:speedometer-medium",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.synchroon_laden_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Synchroon Laden Status",
+          "icon": "mdi:battery-sync",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.beide_actief_status": [
+        "Onbekend",
+        {
+          "friendly_name": "Beide Actief Status",
+          "icon": "mdi:format-columns",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_proxy_versie": [
+        "v0.2.0",
+        {
+          "friendly_name": "Zendure Proxy Versie",
+          "icon": "mdi:call-split",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_7_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 7 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_8_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 8 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_9_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 9 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_10_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 10 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_11_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 11 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_12_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 12 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_13_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 13 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_14_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 14 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_15_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 15 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_16_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 16 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_17_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 17 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_laadpercentage": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Laadpercentage",
+          "device_class": "battery",
+          "unit_of_measurement": "%",
+          "state_class": "measurement",
+          "proxy_last_successful_get_at": 1000
+        }
+      ],
+      "sensor.zendure_2400_ac_batterij_18_temperatuur": [
+        "unknown",
+        {
+          "friendly_name": "Zendure 2400 AC Batterij 18 Temperatuur",
+          "unit_of_measurement": "\u00b0C",
+          "state_class": "measurement",
+          "device_class": "temperature",
+          "icon": "mdi:thermometer",
+          "proxy_last_successful_get_at": 1000
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Merge this top-level block into AppDaemon apps.yaml.
+zendure_proxy:
+  module: zendure_proxy
+  class: ZendureProxy
+  devices:
+    - ip: 192.0.2.11
+      charge_max_watts: 800
+      discharge_max_watts: 800
+    - ip: 192.0.2.12
+      charge_max_watts: 800
+      discharge_max_watts: 800
+  server_port: 8120
+  manual_mode_repeat: true

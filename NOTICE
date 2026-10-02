@@ -1,0 +1,22 @@
+Zendure AppDaemon Proxy
+Copyright (C) 2026 Andre Baart
+SPDX-License-Identifier: GPL-3.0-only
+
+The GPL-3.0-only grant covers newly authored code and the owner's retained,
+audited Python modules, synthetic tests, tools and configuration examples.
+The root LICENSE contains the unmodified GNU General Public License version 3.
+
+The AI-generated illustation.png is distributed with the owner's authorization.
+No upstream Node-RED flows, historical simulator, upstream pictures, legacy
+REST/socket packages or copied dashboard blocks form part of this release.
+
+Acknowledgements: gast777/Casper Rijnders and Gielz1986/Michiel Hofker provided
+historical implementations and interoperability context. This acknowledgement
+is not a grant to relicense their non-commercial source files.
+
+The prepare_gielz_temperature_group tool operates on a user's existing package.
+Generated output can retain the user's Gielz-derived text and its original
+license conditions. The tool's GPL license does not relicense the input/output.
+
+See audit/provenance.json and audit/IMPLEMENTATION_INPUTS.md for provenance
+and the limits of the investigation. Zendure is a third-party product name.

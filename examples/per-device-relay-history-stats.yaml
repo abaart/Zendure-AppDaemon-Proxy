@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Recorded occurrences within the current local day; ongoing intervals may count.
+# Copy into an HA package, preserving existing Recorder configuration.
+sensor:
+- platform: history_stats
+  name: Zendure 1 Relais Schakelingen Opladen Vandaag
+  unique_id: zendure_1_relais_schakelingen_opladen_vandaag
+  entity_id: sensor.zendure_1_modus
+  state: Opladen
+  type: count
+  start: '{{ as_timestamp(today_at("00:00")) }}'
+  end: '{{ as_timestamp(now()) }}'
+- platform: history_stats
+  name: Zendure 1 Relais Schakelingen Ontladen Vandaag
+  unique_id: zendure_1_relais_schakelingen_ontladen_vandaag
+  entity_id: sensor.zendure_1_modus
+  state: Ontladen
+  type: count
+  start: '{{ as_timestamp(today_at("00:00")) }}'
+  end: '{{ as_timestamp(now()) }}'
+- platform: history_stats
+  name: Zendure 2 Relais Schakelingen Opladen Vandaag
+  unique_id: zendure_2_relais_schakelingen_opladen_vandaag
+  entity_id: sensor.zendure_2_modus
+  state: Opladen
+  type: count
+  start: '{{ as_timestamp(today_at("00:00")) }}'
+  end: '{{ as_timestamp(now()) }}'
+- platform: history_stats
+  name: Zendure 2 Relais Schakelingen Ontladen Vandaag
+  unique_id: zendure_2_relais_schakelingen_ontladen_vandaag
+  entity_id: sensor.zendure_2_modus
+  state: Ontladen
+  type: count
+  start: '{{ as_timestamp(today_at("00:00")) }}'
+  end: '{{ as_timestamp(now()) }}'
+- platform: history_stats
+  name: Zendure 3 Relais Schakelingen Opladen Vandaag
+  unique_id: zendure_3_relais_schakelingen_opladen_vandaag
+  entity_id: sensor.zendure_3_modus
+  state: Opladen
+  type: count
+  start: '{{ as_timestamp(today_at("00:00")) }}'
+  end: '{{ as_timestamp(now()) }}'
+- platform: history_stats
+  name: Zendure 3 Relais Schakelingen Ontladen Vandaag
+  unique_id: zendure_3_relais_schakelingen_ontladen_vandaag
+  entity_id: sensor.zendure_3_modus
+  state: Ontladen
+  type: count
+  start: '{{ as_timestamp(today_at("00:00")) }}'
+  end: '{{ as_timestamp(now()) }}'

@@ -1,0 +1,119 @@
+# SPDX-License-Identifier: GPL-3.0-only
+title: Zendure AppDaemon Proxy
+views:
+- title: Overview
+  path: '0'
+  cards:
+  - type: markdown
+    content: '## Zendure batteries
+
+      Check device health before interpreting power and SoC.'
+  - type: entities
+    entities:
+    - sensor.proxy_zendure_pool_healthy
+    - sensor.vermogensopdracht
+    - sensor.zendure_actief_device
+    - sensor.zendure_proxy_versie
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+    - type: entities
+      title: Device 1
+      entities:
+      - sensor.zendure_1_health
+      - sensor.zendure_1_laadpercentage
+      - sensor.zendure_1_vermogen_aansturing
+      - sensor.zendure_1_deep_standby
+      - sensor.zendure_1_wifi_rssi
+    - type: entities
+      title: Device 2
+      entities:
+      - sensor.zendure_2_health
+      - sensor.zendure_2_laadpercentage
+      - sensor.zendure_2_vermogen_aansturing
+      - sensor.zendure_2_deep_standby
+      - sensor.zendure_2_wifi_rssi
+    - type: entities
+      title: Device 3
+      entities:
+      - sensor.zendure_3_health
+      - sensor.zendure_3_laadpercentage
+      - sensor.zendure_3_vermogen_aansturing
+      - sensor.zendure_3_deep_standby
+      - sensor.zendure_3_wifi_rssi
+- title: History
+  path: history
+  cards:
+  - type: history-graph
+    hours_to_show: 24
+    entities:
+    - sensor.zendure_1_laadpercentage
+    - sensor.zendure_2_laadpercentage
+    - sensor.zendure_3_laadpercentage
+  - type: history-graph
+    hours_to_show: 6
+    entities:
+    - sensor.zendure_1_vermogen_aansturing
+    - sensor.zendure_2_vermogen_aansturing
+    - sensor.zendure_3_vermogen_aansturing
+- title: Diagnostics
+  path: metrics
+  cards:
+  - type: entities
+    title: Requests and queue
+    entities:
+    - sensor.zendure_proxy_incoming_get_total
+    - sensor.zendure_proxy_incoming_post_total
+    - sensor.zendure_proxy_queue_get_depth
+    - sensor.zendure_proxy_queue_post_depth
+  - type: entities
+    title: Modes
+    entities:
+    - sensor.dual_mode_demper_status
+    - sensor.synchroon_laden_status
+    - sensor.beide_actief_status
+    - sensor.anti_pingpong_status
+    - sensor.relay_saver_status
+- title: Device 1
+  path: device-1
+  cards:
+  - type: entities
+    entities:
+    - sensor.zendure_1_health
+    - sensor.zendure_1_serienummer
+    - sensor.zendure_1_ip_adres
+    - sensor.zendure_1_relais_stand
+    - sensor.zendure_1_kalibratie_bezig
+    - sensor.zendure_1_opslagmodus
+    - sensor.zendure_1_soc_limiet_status
+    - sensor.zendure_1_omvormer_temperatuur
+    - sensor.zendure_1_offgrid_modus
+- title: Device 2
+  path: device-2
+  cards:
+  - type: entities
+    entities:
+    - sensor.zendure_2_health
+    - sensor.zendure_2_serienummer
+    - sensor.zendure_2_ip_adres
+    - sensor.zendure_2_relais_stand
+    - sensor.zendure_2_kalibratie_bezig
+    - sensor.zendure_2_opslagmodus
+    - sensor.zendure_2_soc_limiet_status
+    - sensor.zendure_2_omvormer_temperatuur
+    - sensor.zendure_2_offgrid_modus
+- title: Device 3
+  path: device-3
+  cards:
+  - type: entities
+    entities:
+    - sensor.zendure_3_health
+    - sensor.zendure_3_serienummer
+    - sensor.zendure_3_ip_adres
+    - sensor.zendure_3_relais_stand
+    - sensor.zendure_3_kalibratie_bezig
+    - sensor.zendure_3_opslagmodus
+    - sensor.zendure_3_soc_limiet_status
+    - sensor.zendure_3_omvormer_temperatuur
+    - sensor.zendure_3_offgrid_modus

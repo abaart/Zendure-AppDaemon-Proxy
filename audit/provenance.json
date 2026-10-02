@@ -1,0 +1,780 @@
+{
+  "format_version": 1,
+  "license": "GPL-3.0-only",
+  "predecessor_baseline": "d6133b8a12ada24bc0c79076fdf29e18b8734451",
+  "latest_owned_additions": "c0c4153cd68d99ec2cbeef77103cbd5e23ca954a",
+  "upstream_license_blobs": {
+    "gast777": "cd5134596d45776ee30790cb1cbc335f944567d2",
+    "Gielz1986": "98556ae285d1c7c50fa5678942bd4becff0ac1e4"
+  },
+  "limitations": "Source comparison is bounded and not a legal guarantee; input separation is not certified clean-room development. Functional APIs and behavior are retained.",
+  "files": [
+    {
+      "path": ".github/workflows/validate-hacs.yml",
+      "sha256": "59ad446cce4f0703fbf3e905ba7f9a4767d2c0e1f3d487a25e8f8dd0091402fc",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e65860ac300c45354091ba7eb52d7650f5330357b4ffd0030f82eff5b306dd75",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "398be819b7b8aabd0a9f3f0e04532e0edb7e69005c74d903e0872e57e0e1889f",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Free Software Foundation",
+      "original_commits": [],
+      "source": "https://www.gnu.org/licenses/gpl-3.0.txt",
+      "relevant_overlaps": "Unmodified standard license document",
+      "decision": "standard license text",
+      "rights_basis": "GPL text permits verbatim copies of the license document"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "302c2f70db5622a666597cb342d63ce14fc187c457de32e51917aaeb8a6b7935",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New copyright, acknowledgements and source provenance notice",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "owner-authored retained",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "README.md",
+      "sha256": "91913dc18f2386837cabebd078968a0d01e5a880dad56c06da449ca1503514ef",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/dashboard.yaml",
+      "sha256": "ff6e0c996a7574e896cd90636d65142c6d156018f17a224fee6c96f4fbb37063",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy.py",
+      "sha256": "7d77a7cee97fce987d322e8b1892b36b68c6239a0996bf6e08a2f5fb2814679d",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_anti_pingpong.py",
+      "sha256": "f22be0724fb69f24961d11d896e0bb881f11152f48de041de6b99100a9a2454b",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "cd74ce9dec64d3225a24d7417f79279ea65967ed"
+      ],
+      "source": "Owner-authored later module retained from abaart/Zendure-zenSDK-proxy",
+      "relevant_overlaps": "Expected retained owner implementation; health and anti_pingpong named helpers independently replaced",
+      "decision": "owner-authored retained",
+      "rights_basis": "Prior history audit found own later implementation; owner explicitly grants GPL-3.0-only in implementation request"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_config.py",
+      "sha256": "33f038c681c439b194a7c04b38ceef5df335614ac434c41c871a07720e376066",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_device_client.py",
+      "sha256": "b86104acb6270a6acd92b2d751b139ca39244874efd79a1558f94a83e39f14c6",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_get_handler.py",
+      "sha256": "2498f16135478df42638c5a08b89eaada57806ae5fe81272ec87834f37f9d56d",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_ha_sensors.py",
+      "sha256": "fd21577e051228169aaf523531f1de6c692bb1a6ba5121bfe0ceeb30b352935f",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_health.py",
+      "sha256": "4af094933e8b71b99e47341dc78b59405e03beb80318577459e21ebda14a1977",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "6447fb2805065b776db711418afab439813b3b96"
+      ],
+      "source": "Owner-authored later module retained from abaart/Zendure-zenSDK-proxy",
+      "relevant_overlaps": "Expected retained owner implementation; health and anti_pingpong named helpers independently replaced",
+      "decision": "owner-authored retained",
+      "rights_basis": "Prior history audit found own later implementation; owner explicitly grants GPL-3.0-only in implementation request"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_logging.py",
+      "sha256": "c008bb2b7cceea9cda2bee36e570716214060e067540e7d4c98b1c95d8b5c851",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "a4d0bb4ef0cd7d1ccd2592a59859ba2c0baaaa81"
+      ],
+      "source": "Owner-authored later module retained from abaart/Zendure-zenSDK-proxy",
+      "relevant_overlaps": "Expected retained owner implementation; health and anti_pingpong named helpers independently replaced",
+      "decision": "owner-authored retained",
+      "rights_basis": "Prior history audit found own later implementation; owner explicitly grants GPL-3.0-only in implementation request"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_metrics.py",
+      "sha256": "6dbfe98ace1190fff23609dee2836417ca6cd26af0bb4265ef820bf77f41b5c8",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "d9a4d932946ccb49f3001ab6ae290430edadaa63"
+      ],
+      "source": "Owner-authored later module retained from abaart/Zendure-zenSDK-proxy",
+      "relevant_overlaps": "Expected retained owner implementation; health and anti_pingpong named helpers independently replaced",
+      "decision": "owner-authored retained",
+      "rights_basis": "Prior history audit found own later implementation; owner explicitly grants GPL-3.0-only in implementation request"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_mqtt_discovery.py",
+      "sha256": "6f7a739044b415ff7644b2b8709c2a789e66457665673ee335190f3b50c8709d",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "f85175ba1fb309331e0f6b3f2fd312f004e476be"
+      ],
+      "source": "Owner-authored later module retained from abaart/Zendure-zenSDK-proxy",
+      "relevant_overlaps": "Expected retained owner implementation; health and anti_pingpong named helpers independently replaced",
+      "decision": "owner-authored retained",
+      "rights_basis": "Prior history audit found own later implementation; owner explicitly grants GPL-3.0-only in implementation request"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_post_handler.py",
+      "sha256": "8a1ac8ae931253119611558c0ca415fac67243a532958badda97d496ec6e5204",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_power.py",
+      "sha256": "8faed3d8bd5639eea1d9dee0ad7522df118b52f90d034341d8a00970fdbbca8e",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_publication.py",
+      "sha256": "4158edbde339fe7d37cfa537b3ae22971f76bfdcfb76b4d57df362a5820e696c",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "d37b662c3873c14a73d67b1c3af348dace662479",
+        "c0c4153cd68d99ec2cbeef77103cbd5e23ca954a"
+      ],
+      "source": "Owner-authored later module retained from abaart/Zendure-zenSDK-proxy",
+      "relevant_overlaps": "Expected retained owner implementation; health and anti_pingpong named helpers independently replaced",
+      "decision": "owner-authored retained",
+      "rights_basis": "Prior history audit found own later implementation; owner explicitly grants GPL-3.0-only in implementation request"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_queue.py",
+      "sha256": "9f21a0d040c56130ac8d476219cfa5e8622e51d6a166f8e34718a104f15612f2",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_standby.py",
+      "sha256": "8458afb21534f1aa3713fd6bf876cfe8e1c6f5c0c0cfb99ca5f50e5151449bbe",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "apps/Zendure-AppDaemon-Proxy/zendure_proxy_state.py",
+      "sha256": "ecd0edff4c151e0577d1488ce6a538d9173a8d383bc9938766b0eab71d9ae6cd",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "audit/IMPLEMENTATION_INPUTS.md",
+      "sha256": "0503e4c0a9de4ecf638ba54d0c75a6eb50ca7c2910eaa91772e17bc6c02291cd",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/data-contract.json",
+      "sha256": "0f917141e56605abd30bcc11d6e7ddc6607bad24e09e17032bf2314e57772422",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/inputs-config-state.md",
+      "sha256": "fce7f00c88f9119241a8a3cc7c012c04fe3f221ff93e4a5cda785ee9b54bf902",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/inputs-get-sensors.md",
+      "sha256": "470b1c8119fb0ba36d459e9493a8723ff9f5727f73331a92d01c6db76319174e",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/inputs-io-standby.md",
+      "sha256": "988570ff36b0afe97495011084d7af2c1f3b346dfe19af22498255a46b72048a",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/inputs-power-post.md",
+      "sha256": "27df9bd2fc774a1a8e74585f0e62f7e788812ef1bcecd29088e627cdbe8ae4c7",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/inputs-runtime.md",
+      "sha256": "3fcb38bebe721a359eec42e6ed4419be1236374a190835957e99264d4ed69989",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/interface-signatures.json",
+      "sha256": "f0f2ca656c42e541025f2a6dd30305532800b1b8f7f2a53f3d97a88b2b7554d1",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/old-repository-migration-notice.md",
+      "sha256": "8e1f2dbbd03abd941af9fec756dba01867d9c6866a0b2a5dbc4e3adf7ae1cf12",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/provenance-review.md",
+      "sha256": "af898aadac67a3d2e92d34e178a14d470a84b04d7700ce7dea0420c58f70129c",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/provenance.json",
+      "sha256": null,
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/review-http-runtime.md",
+      "sha256": "4855a76e2b3eaf5c32bd2058ec26b36421561cecc5d274a2d73413b9056e89ed",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/sensor-observable-fixtures.json",
+      "sha256": "343adb459dea58e6a0aee038c4a54ced45da81433927ba7960e3db31cb645c48",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Audit declarations, interface facts and synthetic observable fixtures from the implementation investigation",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "docs/build.md",
+      "sha256": "5bf422e82e39bd7be555e1593e5a86fdc7104d8c9db9e8da1a8eccbd56b03240",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "docs/migration.md",
+      "sha256": "92956ffb3a31673316a12883a9690c258d9b009a539b45661c546eee58c56911",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "docs/sensors.md",
+      "sha256": "006f22dc55df1acd97f4a5f71d9bbb3ab841c1a0f9824d4227c1324c3bacc783",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "examples/apps.yaml",
+      "sha256": "812a0012b4cdfccefa0b32276e2b3947d38ffe1fa54e07302deee024017f1da9",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "examples/per-device-relay-history-stats.yaml",
+      "sha256": "a2ba07f452569ab314a9d469cff52d212952abfa03ad6bb0cec211d9d25a6a7c",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "examples/zendure_network_watchdog.yaml",
+      "sha256": "c758643681588ca7a8adcd788125282ddba396d0770c9a3831f0e1a81e195cb8",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "c0c4153cd68d99ec2cbeef77103cbd5e23ca954a"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "examples/zendure_proxy.dash",
+      "sha256": "10721c28983493bfbaa3895a334295bca5d8fa57ce8b98ebbc43f9adca5553ce",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "examples/zendure_recorder_policy.yaml",
+      "sha256": "a9069d2bc444d525b5694a904f35f67e74ac8845b028d88f8096dc14cd61e9e6",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "d37b662c3873c14a73d67b1c3af348dace662479"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "examples/zendure_temperature_availability.yaml",
+      "sha256": "83e5f78b13d5aa1aa25a1236e2ec3b1d64c230b4eb2296b7479332668981e2c6",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "d37b662c3873c14a73d67b1c3af348dace662479"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "hacs.json",
+      "sha256": "5c731d754c744476ca1849abb91146573a74a69c0cc2fa1cb4c7bb6d9e961f6f",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "illustation.png",
+      "sha256": "2039a17cec404ee4aaf8456340947d8f49c7fd4c93db526e53c95b8e789ede7b",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "0d9dab92068616d7f09b088252c615fb258e81b6"
+      ],
+      "source": "AI-generated illustration, confirmed by owner",
+      "relevant_overlaps": "No inherited upstream picture retained",
+      "decision": "owner-authorized AI illustration",
+      "rights_basis": "Owner confirms AI generation and authorizes successor distribution"
+    },
+    {
+      "path": "requirements-test.txt",
+      "sha256": "f55b43ae25ae3608cc4820add493c55e154253c328f4d249f2f568426cac449f",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "scripts/build_release.py",
+      "sha256": "bfd2e06ddd6559596a4b9ca54c3187aa8d5facb67a1c9fd242060c64c319083c",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "scripts/check_provenance.py",
+      "sha256": "9bed1feeb39879c7e7c84ad8ce991ab0396f3fda4adc7eb94cb1764d2b959976",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "scripts/verify_http_runtime.py",
+      "sha256": "89c9cf49f5f9255f810e1d89ab3f35adf72119a3614c7973f434ce76c3f329f7",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "27f2bec51a957d2f9ab215adf8a713ddcdefa3207a9035fa74b273afdd684d28",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "6a6bcc2e644cac2e4dfa391e44556ead1d9ca8e6"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/node_red_expected.py",
+      "sha256": "1ac47d33188bdceaeecdc1398bdcf933da614842d998d3da4596288886b126d2",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "dcfdf67fe233f9d469b49b1ad6f5637fe386c284"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_appdaemon_proxy_release_gate.py",
+      "sha256": "1c4fc6e8c65949ab27ce3a1a80eba201c29d48fd3a73c576a7c9893519a5ed87",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "bb4aad985398dde87d01b991b1cdb881e2f99af4"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_ha_sensor_policy_config.py",
+      "sha256": "3e91f3f938a222942d215c2c2e5faef5e548f8171ce654b1a71a81c7eedb00a5",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "d37b662c3873c14a73d67b1c3af348dace662479"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_independent_power_safety.py",
+      "sha256": "4040cd0a7e109cbd6bdda537541b7e5ffd895737b04c57edfca0e0dc5f66e299",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "tests/test_network_watchdog.py",
+      "sha256": "1bc1b8144a68872e0cb17f330d757636f85e16c21710ed9e3aec21af8469906b",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "tests/test_node_red_get_response_compat.py",
+      "sha256": "e54830aac8613cf8b037c84867182d6b66aa2974f205cee53233f88306a4e4ac",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "dcfdf67fe233f9d469b49b1ad6f5637fe386c284"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_node_red_post_power_compat.py",
+      "sha256": "c438ec3130cfcf9c22aa196f720265571e9a4f3f917a3e195a119bbd4ebebd89",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "dcfdf67fe233f9d469b49b1ad6f5637fe386c284"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_node_red_power_distribution_compat.py",
+      "sha256": "de740732c5915427777ddd19e81bd9004f4fcb57d7863e1f1769588564570d73",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "dcfdf67fe233f9d469b49b1ad6f5637fe386c284"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_node_red_repeat_standby_serial_simulated.py",
+      "sha256": "e53cd7f3eccb9493f79fb9017212f6c6134098ae80b5894aed33d91573021a4d",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "dcfdf67fe233f9d469b49b1ad6f5637fe386c284"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_real_http.py",
+      "sha256": "f4d31f56dc47fdd792a5c22147a540e11d64b0b89c3b09e6fd709b786f6593e4",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "tests/test_release_artifacts.py",
+      "sha256": "3cb8996ab341c14a7b5f2288ae8ca2af5180a4f0c6c248a80b29bfb85e53ed92",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "tests/test_runtime_resilience.py",
+      "sha256": "28d610edec6624ca62d38d4caac92812f36189f864e729b6d98009b7e63f047f",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "Written for the standalone successor using recorded functional inputs",
+      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
+    },
+    {
+      "path": "tools/prepare_gielz_temperature_group.py",
+      "sha256": "fe7d64d4cb1498b77e6f44653430d3baf7c2f8be4436c1944d6e0f94f6bcca52",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "d37b662c3873c14a73d67b1c3af348dace662479"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tools/requirements.txt",
+      "sha256": "6a44409bbdb01b4577d19d45e6563ef97af5971a10c063414399202df9d99cc7",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [
+        "d37b662c3873c14a73d67b1c3af348dace662479"
+      ],
+      "source": "Owner-authored synthetic test, tool or package from predecessor",
+      "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
+      "decision": "owner-authored retained",
+      "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    }
+  ]
+}
