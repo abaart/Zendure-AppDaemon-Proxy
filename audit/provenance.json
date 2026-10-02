@@ -298,6 +298,17 @@
       "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
     },
     {
+      "path": "audit/hacs-release-download.md",
+      "sha256": "44f806e95822626b20f5bc479416899c28e5123777f5c478e33e28069acc7ff4",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New sanitized observations of official HACS downloading the published GitHub v0.2.0 archive and actual isolated AppDaemon restart; official HA history_stats synthetic execution",
+      "relevant_overlaps": "Official component names, API fields and measured results",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized technical verification report; GPL publication requested explicitly"
+    },
+    {
       "path": "audit/inputs-config-state.md",
       "sha256": "fce7f00c88f9119241a8a3cc7c012c04fe3f221ff93e4a5cda785ee9b54bf902",
       "license": "GPL-3.0-only",
