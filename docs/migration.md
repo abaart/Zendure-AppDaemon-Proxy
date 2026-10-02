@@ -2,6 +2,10 @@
 
 The new repository installs into `/config/appdaemon/apps/Zendure-AppDaemon-Proxy/`. Keep the `zendure_proxy:` block, device addresses, server port, module and class unchanged. Stable sensor IDs, discovery topics and device IDs keep existing automation connected.
 
+## Resolve comparison findings first
+
+Complete the high-priority control, configuration, queue and startup findings in [the feature comparison](../audit/feature-parity-review.md) and add regression tests before beginning a live switch. Preserve the protected low-SoC exclusion while resolving compatibility differences. The dashboard repair does not resolve the runtime findings.
+
 ## Prepare while the old proxy runs
 
 Confirm `production_mode: true` in global AppDaemon configuration. Record the working report, installed module hashes, `apps.yaml`, other app names, MQTT identities and metrics counters. Copy the installed modules and configuration to a timestamped backup outside `/config/appdaemon/apps/`. Store sensitive configuration backups outside Git.

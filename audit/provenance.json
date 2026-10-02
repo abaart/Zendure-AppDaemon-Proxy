@@ -66,7 +66,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "91913dc18f2386837cabebd078968a0d01e5a880dad56c06da449ca1503514ef",
+      "sha256": "724c7a56fb2f79be5a15be9ad0e7b44f97622128936a44384b423ed0f85ca02e",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -77,12 +77,12 @@
     },
     {
       "path": "apps/Zendure-AppDaemon-Proxy/dashboard.yaml",
-      "sha256": "ff6e0c996a7574e896cd90636d65142c6d156018f17a224fee6c96f4fbb37063",
+      "sha256": "ef155c6913bf9d3ef1a0eae40b2e1406e3f37fcc93b694b203cf4842729ab116",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
-      "source": "Written for the standalone successor using recorded functional inputs",
-      "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
+      "source": "Independently written native dashboard; watchdog status uses the retained owner-authored examples/zendure_network_watchdog.yaml monitor field contract; inputs recorded in audit/inputs-watchdog-dashboard.md",
+      "relevant_overlaps": "Stable entity IDs and public monitor attributes retained for compatibility; predecessor dashboard template was not an implementation input",
       "decision": "independent implementation",
       "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
     },
@@ -298,6 +298,17 @@
       "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
     },
     {
+      "path": "audit/feature-parity-review.md",
+      "sha256": "43449d54937333f9f40954140d5f0416a02a77c59512c5517b9af15f65cb18f1",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New independently worded review of three read-only old/new source audits and isolated synthetic differential observations, baseline c0c4153 against d11a651",
+      "relevant_overlaps": "Public monitor field names, component names and observed behavior; no predecessor implementation text copied",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized dashboard repair and comparison report; GPL distribution authorized"
+    },
+    {
       "path": "audit/hacs-release-download.md",
       "sha256": "44f806e95822626b20f5bc479416899c28e5123777f5c478e33e28069acc7ff4",
       "license": "GPL-3.0-only",
@@ -362,6 +373,17 @@
       "relevant_overlaps": "Interface names, field identifiers and ordinary language/framework syntax may match for compatibility",
       "decision": "independent implementation",
       "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
+    },
+    {
+      "path": "audit/inputs-watchdog-dashboard.md",
+      "sha256": "c943a339f727130f9063a2f6327c2c9397b022a959ef67c883a1072fb0f68870",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New implementation input and isolated Home Assistant verification record for the independently written watchdog dashboard",
+      "relevant_overlaps": "Public monitor field names, component names and observed behavior; no predecessor implementation text copied",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized dashboard repair and comparison report; GPL distribution authorized"
     },
     {
       "path": "audit/interface-signatures.json",
@@ -464,7 +486,7 @@
     },
     {
       "path": "docs/migration.md",
-      "sha256": "e19de635130c6ccf42d0e2580d9ccf7500696876aff81b09b7e007dbd704dca2",
+      "sha256": "30c42d849f509aa23aba417e2dfb772fec601d8efc2be5fe70cd7582677ab7fc",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -475,7 +497,7 @@
     },
     {
       "path": "docs/sensors.md",
-      "sha256": "58785a43f0d1366da7bff4606f732c479cf105815027423c852c8e0adbe50f43",
+      "sha256": "65b5e3ef0572fe442a2ffa1f2ba907f693f6bfa67b0c7cff985fa4501eec3eaf",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -662,6 +684,17 @@
       "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
       "decision": "owner-authored retained",
       "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
+    },
+    {
+      "path": "tests/test_dashboard_watchdog.py",
+      "sha256": "9acca8f640d98afa24f5d6c615f847e723f75b2927bd67d541506b08dce7062a",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New synthetic tests rendering the independently written dashboard against the retained owner-authored watchdog monitor contract",
+      "relevant_overlaps": "Public monitor field names, component names and observed behavior; no predecessor implementation text copied",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized dashboard repair and comparison report; GPL distribution authorized"
     },
     {
       "path": "tests/test_get_runtime_mode_flags.py",

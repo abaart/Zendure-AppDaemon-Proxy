@@ -5,9 +5,44 @@ views:
   path: '0'
   cards:
   - type: markdown
-    content: '## Zendure batteries
+    content: |-
+      ## Zendure batteries
+      Check device health before interpreting power and SoC.
 
-      Check device health before interpreting power and SoC.'
+      ### Network watchdog
+      {% for n in range(1, 4) %}
+      {% set entity = 'sensor.zendure_' ~ n ~ '_network_monitor' %}
+      {% set m = state_attr(entity, 'monitor') %}
+      **Device {{ n }}**
+      {% if states(entity) in ['unknown', 'unavailable'] or m is not mapping %}
+      Optional network monitor unavailable.
+      {% elif m.get('source_running') is not sameas true or not is_number(m.get('checked_at')) or as_timestamp(now()) - m.get('checked_at') | float(0) > 300 %}
+      Monitoring paused; waiting for fresh proxy data.
+      {% else %}
+      {% set connection = m.get('connection_alert') is sameas true and is_number(m.get('errors_last_hour')) and m.get('errors_last_hour') | float(0) >= 0 and is_number(m.get('connection_hours')) and m.get('connection_hours') | float(0) > 0 %}
+      {% set wifi = m.get('wifi_alert') is sameas true and is_number(m.get('rssi')) and -120 <= m.get('rssi') | float(0) < 0 and is_number(m.get('wifi_reference')) and -120 <= m.get('wifi_reference') | float(0) < 0 and is_number(m.get('rssi_minutes')) and m.get('rssi_minutes') | float(0) > 0 %}
+      {% if connection %}
+      ⚠️ **Persistent connection incident:** {{ m.get('errors_last_hour') | float | round(0) | int }} errors/hour after at least {{ m.get('connection_hours') | float | round(1) }} hours of observation.
+      {% endif %}
+      {% if wifi %}
+      ⚠️ **Persistent Wi-Fi incident:** current {{ m.get('rssi') | float | round(1) }} dBm; frozen pre-incident reference {{ m.get('wifi_reference') | float | round(1) }} dBm. The difference persisted for at least {{ m.get('rssi_minutes') | float | round(1) }} minutes.
+      {% endif %}
+      {% if connection or wifi %}
+      Check the access point, Wi-Fi range and Zendure device.
+      {% elif m.get('connection_alert') is sameas true or m.get('wifi_alert') is sameas true %}
+      Monitor details unavailable; waiting for valid measurements.
+      {% else %}
+      No persistent network incident reported.
+      {% endif %}
+      {% if m.get('baseline_ready') is sameas false %}
+      Wi-Fi reference learning: collecting enough history for a reliable comparison.
+      {% elif m.get('baseline_ready') is sameas true and is_number(m.get('average_rssi')) and -120 <= m.get('average_rssi') | float(0) < 0 %}
+      Wi-Fi reference ready; 24-hour average {{ m.get('average_rssi') | float | round(1) }} dBm.
+      {% endif %}
+      {% endif %}
+
+      {% endfor %}
+      View [History](./history) and [Diagnostics](./metrics) to inspect device measurements and request errors.
   - type: entities
     entities:
     - sensor.proxy_zendure_pool_healthy

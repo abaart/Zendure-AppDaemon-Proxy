@@ -2,6 +2,8 @@
 
 For Home Assistant users controlling several Zendure batteries as one device, this AppDaemon app combines reports and divides power requests across one to ten devices. Existing automation can keep using the proxy endpoints and sensor identifiers.
 
+Keep the current production proxy while the control and recovery findings in the [feature comparison](audit/feature-parity-review.md) remain open. The published `v0.2.0` passes its existing tests; the follow-up comparison found additional cases that must pass before a live migration.
+
 ![Zendure illustration](illustation.png)
 
 ## Installation through HACS
