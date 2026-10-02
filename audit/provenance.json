@@ -22,7 +22,7 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "e65860ac300c45354091ba7eb52d7650f5330357b4ffd0030f82eff5b306dd75",
+      "sha256": "b2ec5f8fd5ee22a40462879b3ed65a60054bb8e3998142b9576e102e17abd035",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -310,7 +310,7 @@
     },
     {
       "path": "audit/inputs-get-sensors.md",
-      "sha256": "470b1c8119fb0ba36d459e9493a8723ff9f5727f73331a92d01c6db76319174e",
+      "sha256": "79d57785cab3ea7ebee22b46c272b082b434964c649a4fab52a4d582a96157a7",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -397,6 +397,17 @@
       "rights_basis": "Owner-authorized factual audit records and functional compatibility documentation"
     },
     {
+      "path": "audit/rehearsal.md",
+      "sha256": "ddfec8a95a81425de7c896967376b4905b38513b15771095d4f005859c856eae",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New sanitized observations from isolated Home Assistant 2026.9.4, HACS 2.0.5 and AppDaemon 4.5.13 rehearsal; synthetic devices and owner-authorized tests",
+      "relevant_overlaps": "Official component names, API fields and exact observed validation message",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized technical test report; GPL publication requested explicitly"
+    },
+    {
       "path": "audit/review-http-runtime.md",
       "sha256": "771a5aa434cb20e7f59c38b5baf10d9e7d7d977446553abb4ab5e6e90881a4bf",
       "license": "GPL-3.0-only",
@@ -430,8 +441,19 @@
       "rights_basis": "New owner-authorized implementation; GPL publication requested explicitly"
     },
     {
+      "path": "docs/changelogs/2026-10-02-01-gpl-successor.md",
+      "sha256": "f258833adeebdb7018c5640b253d0c8c16cf089035d3b82bc4b289346f578735",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New user-facing successor release explanation",
+      "relevant_overlaps": "Product and interface names retained as functional identifiers",
+      "decision": "independent implementation",
+      "rights_basis": "New owner-authorized documentation"
+    },
+    {
       "path": "docs/migration.md",
-      "sha256": "92956ffb3a31673316a12883a9690c258d9b009a539b45661c546eee58c56911",
+      "sha256": "e19de635130c6ccf42d0e2580d9ccf7500696876aff81b09b7e007dbd704dca2",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -442,7 +464,7 @@
     },
     {
       "path": "docs/sensors.md",
-      "sha256": "006f22dc55df1acd97f4a5f71d9bbb3ab841c1a0f9824d4227c1324c3bacc783",
+      "sha256": "58785a43f0d1366da7bff4606f732c479cf105815027423c852c8e0adbe50f43",
       "license": "GPL-3.0-only",
       "rights_holder": "Andre Baart",
       "original_commits": [],
@@ -631,6 +653,17 @@
       "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
     },
     {
+      "path": "tests/test_get_runtime_mode_flags.py",
+      "sha256": "75595e5932b4184afaeedc1d5ff435d4fb449f9913e3fc24887b76d657f3b701",
+      "license": "GPL-3.0-only",
+      "rights_holder": "Andre Baart",
+      "original_commits": [],
+      "source": "New independently written POST-to-GET runtime-mode regression tests",
+      "relevant_overlaps": "Public mode fields and synthetic device interfaces",
+      "decision": "independent implementation",
+      "rights_basis": "Owner-authorized new synthetic regression tests"
+    },
+    {
       "path": "tests/test_ha_sensor_policy_config.py",
       "sha256": "3e91f3f938a222942d215c2c2e5faef5e548f8171ce654b1a71a81c7eedb00a5",
       "license": "GPL-3.0-only",
@@ -775,28 +808,6 @@
       "relevant_overlaps": "Retained own implementation; no upstream source fixtures; Gielz transformer output may retain original input licensing",
       "decision": "owner-authored retained",
       "rights_basis": "Bounded source audit and owner GPL relicensing instruction"
-    },
-    {
-      "path": "docs/changelogs/2026-10-02-01-gpl-successor.md",
-      "sha256": "f258833adeebdb7018c5640b253d0c8c16cf089035d3b82bc4b289346f578735",
-      "license": "GPL-3.0-only",
-      "rights_holder": "Andre Baart",
-      "original_commits": [],
-      "source": "New user-facing successor release explanation",
-      "relevant_overlaps": "Product and interface names retained as functional identifiers",
-      "decision": "independent implementation",
-      "rights_basis": "New owner-authorized documentation"
-    },
-    {
-      "path": "tests/test_get_runtime_mode_flags.py",
-      "sha256": "75595e5932b4184afaeedc1d5ff435d4fb449f9913e3fc24887b76d657f3b701",
-      "license": "GPL-3.0-only",
-      "rights_holder": "Andre Baart",
-      "original_commits": [],
-      "source": "New independently written POST-to-GET runtime-mode regression tests",
-      "relevant_overlaps": "Public mode fields and synthetic device interfaces",
-      "decision": "independent implementation",
-      "rights_basis": "Owner-authorized new synthetic regression tests"
     }
   ]
 }

@@ -31,4 +31,4 @@ Reinstall the old HACS entry if removal changed its registration. Keep both rele
 
 ## Historical repository
 
-Prepare a README migration notice pointing to the successor. Change the old repository only with owner approval. After successful live migration, test historical HACS downloads before setting a reference-only `migration` default branch. Keep the old `main`, tags, licenses and release assets. Keep the old app structure if the reference-only branch breaks historical downloads.
+Prepare a README migration notice pointing to the successor. Change the old repository only with owner approval. The isolated HACS 2.0.5 repository validation rejected a reference-only default branch because the AppDaemon source directory was absent: `Repository structure for main is not compliant`. Keep the old default `main`, app structure, `hacs.json`, tags, licenses and release assets. Add the approved README notice to the existing structure after the live migration succeeds. See `audit/rehearsal.md` for the bounded validation method.

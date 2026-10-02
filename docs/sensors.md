@@ -8,4 +8,4 @@ The optional `examples/zendure_recorder_policy.yaml` excludes selected diagnosti
 
 `tools/prepare_gielz_temperature_group.py` edits a user-supplied package to split slower temperature polling from fast control values. Inspect the generated file before installation. The generated package can contain Gielz-origin material under its original terms; the GPL license on this tool does not change those terms.
 
-The relay example measures time in each relay position and counts recorded transitions during the current local day. Recorder retention and restart gaps limit the completeness of those measurements. The network-watchdog example alerts only after its configured persistence and reference-training conditions.
+The relay example counts recorded charging and discharging state occurrences during the current local day. An interval already active at midnight can count toward the new day. Use the proxy metrics counters when you need measured relay edges; Recorder retention and restart gaps limit history-based counts. The network-watchdog example alerts only after its configured persistence and reference-training conditions.
